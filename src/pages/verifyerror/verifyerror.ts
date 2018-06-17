@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ValidatePage } from '../validate/validate';
 import { SubmissionsuccessPage } from '../submissionsuccess/submissionsuccess';
+import { UploadPage } from '../upload/upload';
 /**
  * Generated class for the VerifyerrorPage page.
  *
@@ -24,6 +25,6 @@ export class VerifyerrorPage {
     console.log('ionViewDidLoad VerifyerrorPage');
   }
   gotovalidatepage() {
-    this.navCtrl.push(SubmissionsuccessPage);
+    this.navCtrl.push(UploadPage);
   }
 }

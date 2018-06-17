@@ -36,6 +36,6 @@ export class VerifyPage {
     setTimeout(() => {
       loading.dismiss();
       this.navCtrl.push(VerifysuccessPage);
-    }, 2000);
+    }, 100);
   }
 }

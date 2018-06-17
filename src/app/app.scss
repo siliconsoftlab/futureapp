@@ -20,7 +20,16 @@
     padding-top: 0.3em;
     padding-bottom: 0.1em;
     border-radius: 10%;
-    font-size: 3.5em;
+    font-size: 2.5em;
+  }
+
+  .logo1 {
+    margin: 20px auto 0;
+    width: 4em;
+    padding-top: 0.3em;
+    padding-bottom: 0.1em;
+    border-radius: 10%;
+    font-size: 1.5em;
   }
 
   .smalllogo {
@@ -28,6 +37,7 @@
     border-radius: 10%;
     font-size: .5em;
     margin-top: 1em;
+    padding-right: 1em;
   }
 
   .fnt3 {
@@ -39,10 +49,21 @@
   .fnt1 {
     font-size: 1em !important;
   }
+  .fnt15 {
+    font-size: 1.5em !important;
+}
+.fnt125 {
+    font-size: 1.25em !important;
+}
+.fnt75 {
+    font-size: 0.75em !important;
+}
   .no-padding {
     padding: 0px !important;
 }
-
+.padding16  {
+    padding-bottom: 1.6%;
+}  
 .no-margin {
     margin: 0px !important;
 }
@@ -70,7 +91,7 @@
         padding-right: 8% !important;
     }
     .padding-top30{
-        padding-top: 20% !important;
+        padding-top: 13% !important;
     }
     .btnz>span{
         display:inline-block;
@@ -164,3 +185,19 @@
         margin-right: 10% !important;
         margin-left: 10% !important;
     }
+
+    .title{
+        margin-top: 7px;
+        margin-bottom: 6px;
+        font-size: 0.75em;
+    }
+
+    /* Camear icon size uplaod.html */
+    .width50{
+            width: 40% !important;
+    }
+  /* Camear font size uplaod.html */
+  .font085{
+    font-size: 0.85em !important;
+  }
+    

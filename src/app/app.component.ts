@@ -16,7 +16,7 @@ import { ViewconfirmationPage } from '../pages/viewconfirmation/viewconfirmation
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = ValidatePage;
+  rootPage:any = HomePage;
   
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {

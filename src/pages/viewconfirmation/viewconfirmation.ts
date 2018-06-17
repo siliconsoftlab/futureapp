@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { SubmissionsuccessPage } from '../submissionsuccess/submissionsuccess';
 /**
  * Generated class for the ViewconfirmationPage page.
  *
@@ -21,5 +21,8 @@ export class ViewconfirmationPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad ViewconfirmationPage');
   }
-
+  next() {
+    this.navCtrl.push(SubmissionsuccessPage);
+  }
+  
 }
