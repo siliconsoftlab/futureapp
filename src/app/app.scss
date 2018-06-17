@@ -14,3 +14,61 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+.logo {
+    margin: 20px auto 0;
+    width: 4em;
+    padding-top: 0.3em;
+    padding-bottom: 0.1em;
+    border-radius: 10%;
+    font-size: 3.5em;
+  }
+
+  .smalllogo {
+    width: 4em;
+    border-radius: 10%;
+    font-size: .5em;
+    margin-top: 1em;
+  }
+
+  .fnt3 {
+    font-size: 3em !important;
+  }
+  .fnt2 {
+    font-size: 2em !important;
+  }
+  .fnt1 {
+    font-size: 1em !important;
+  }
+  .no-padding {
+    padding: 0px !important;
+}
+
+.no-margin {
+    margin: 0px !important;
+}
+.no-btm-margin {
+    margin-bottom: 0px !important;
+}
+.input-border-box{
+    border: 1px solid #21909B !important;
+     padding-right: 0px !important;
+
+}
+.no-border{
+  
+    border: 0px solid #fff !important;
+}
+
+.verify-bg{
+    background-color: #21909B ;
+}
+.line{
+    border: 1px solid #eaeaea;
+    }
+    .padding-left-right-30{
+        padding-left: 8% !important;
+        padding-right: 8% !important;
+    }
+    .padding-top30{
+        padding-top: 20% !important;
+    }

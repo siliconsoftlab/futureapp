@@ -1,0 +1,56 @@
+<!--
+  Generated template for the ValidatePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+
+
+<ion-content>
+  <div text-center>
+    <div style=" display: inline-block;">
+      <div class="smalllogo">
+        <img src="assets/imgs/icon.png">
+      </div>
+    </div>
+
+    <div style=" display: inline-block;">
+      <ion-label style=" margin-top: 7px;margin-bottom: 6px;">FOREIGN WORKER ADDRESS UPDATING SYSTEM</ion-label>
+    </div>
+  </div>
+  <div class="line"></div>
+  <div text-center padding>
+    <ion-label color="danger" class="fnt2 no-btm-margin "> Xu Xia</ion-label>
+    <ion-label class="fnt1 no-margin"> FIN No: G564638D</ion-label>
+  </div>
+  <div class="padding-left-right-30" padding-bottom>
+    <ion-input type="text" [(ngModel)]="contactno" placeholder="Enter Contact No." class="input-border-box"></ion-input>
+  </div>
+  <div class="padding-left-right-30" padding-bottom>
+    <ion-label text-center class="fnt1">Resdential Address</ion-label>
+    <ion-input type="text" [(ngModel)]="street" placeholder="Street" class="input-border-box"></ion-input>
+  </div>
+  <div class="padding-left-right-30" padding-bottom>
+    <ion-input type="text" [(ngModel)]="unitno" placeholder="Unit No." class="input-border-box"></ion-input>
+  </div>
+  <div class="padding-left-right-30" padding-bottom>
+    <ion-input type="text" [(ngModel)]="postalcode" placeholder="Postal Code" class="input-border-box"></ion-input>
+  </div>
+
+  <div class="padding-left-right-30" padding-bottom>
+    <ion-label text-center class="fnt1">Unit Detail</ion-label>
+    <ion-input type="text" [(ngModel)]="noofoccupants" placeholder="No of occupants in whole unit" class="input-border-box"></ion-input>
+  </div>
+  <div class="padding-left-right-30" padding-bottom>
+    <ion-input type="text" [(ngModel)]="noofobedrooms" placeholder="No. of Bedrooms" class="input-border-box"></ion-input>
+  </div>
+  <div text-center padding>
+    <button ion-button medium color="danger" (click)="next()">
+      Next
+    </button>
+  </div>
+
+
+
+</ion-content>

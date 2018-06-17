@@ -1,14 +1,44 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
-</ion-header>
-
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content padding no-bounce>
+  <div text-center padding-bottom>
+    <div class="logo">
+      <img src="assets/imgs/logo.png">
+    </div>
+    <div style="font-size: 1.2em;">
+      <ion-label no-margin > FOREIGN WORKER</ion-label>
+      <ion-label no-margin> ADDRESS UPDATING SYSTEM</ion-label>
+    </div>
+    <div style="padding-top: 13%">
+      <ion-buttons text-center>
+        <button ion-button small color="lightgreen">English</button>
+        <button ion-button small outline>中文</button>
+      </ion-buttons>
+    </div>
+  </div>
+  <div class="padding-left-right-30" padding-bottom>
+      <ion-input type="text" [(ngModel)]="fin" placeholder="FIN NO." class="input-border-box"></ion-input>
+  </div>
+  <div class="padding-left-right-30" padding-bottom>
+    <ion-input type="text" [(ngModel)]="password" placeholder="Password" class="input-border-box"></ion-input>
+  </div>
+  <div text-center class="padding-left-right-30">
+    <button ion-button large full block color="danger"  (click)="login()">
+      Login
+    </button>
+  </div>
+ <!-- <ion-list class="list-form" padding>
+    <ion-item>
+      <ion-label floating>FIN NO.</ion-label>
+      <ion-input type="text" [(ngModel)]="fin"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Password</ion-label>
+      <ion-input type="password" [(ngModel)]="password"></ion-input>
+    </ion-item>
+    <div padding>
+      <button ion-button large full block color="danger" (click)="login()">
+        Login
+      </button>
+    </div>
+  </ion-list>-->
+  <ion-label style="text-align: center;" padding class="padding-top30"> @ 2018 Future Employment Pte Ltd.</ion-label>
 </ion-content>
