@@ -48,29 +48,29 @@
     </div>
   <div class="line"></div>
   <div text-center padding-left padding-right  padding-bottom >
-    <ion-label color="danger" class="fnt15 no-btm-margin " style="font-weight: bold"> Xu Xia</ion-label>
-    <ion-label class="fnt75 no-margin"> FIN No: G564638D</ion-label>
+    <ion-label color="danger" class="fnt15 no-btm-margin " style="font-weight: bold">{{fullname}}</ion-label>
+    <ion-label class="fnt75 no-margin">{{nric}}</ion-label>
   </div>
   <div class="padding-left-right-30"padding16>
-    <ion-input type="text" [(ngModel)]="contactno" placeholder="Enter Contact No." class="input-border-box"></ion-input>
+    <ion-input type="text" [(ngModel)]="contactno" placeholder="Enter Contact No." class="input-border-box">{{contactno}}</ion-input>
   </div>
   <div class="padding-left-right-30 padding16">
     <ion-label text-center class="fnt125"  style="margin-bottom: 4px;" >Resdential Address</ion-label>
-    <ion-input type="text" [(ngModel)]="street" placeholder="Street" class="input-border-box"></ion-input>
+    <ion-input type="text" [(ngModel)]="street" placeholder="Street" class="input-border-box">{{street}}</ion-input>
   </div>
   <div class="padding-left-right-30 padding16">
-    <ion-input type="text" [(ngModel)]="unitno" placeholder="Unit No." class="input-border-box"></ion-input>
+    <ion-input type="text" [(ngModel)]="unitno" placeholder="Unit No." class="input-border-box">{{unitno}}</ion-input>
   </div>
   <div class="padding-left-right-30">
-    <ion-input type="text" [(ngModel)]="postalcode" placeholder="Postal Code" class="input-border-box"></ion-input>
+    <ion-input type="text" [(ngModel)]="postalcode" placeholder="Postal Code" class="input-border-box">{{postalcode}}</ion-input>
   </div>
 
   <div class="padding-left-right-30 padding16" >
     <ion-label text-center class="fnt125" style="margin-bottom: 4px;">Unit Detail</ion-label>
-    <ion-input type="text" [(ngModel)]="noofoccupants" placeholder="No of occupants in whole unit" class="input-border-box"></ion-input>
+    <ion-input type="text" [(ngModel)]="noofoccupants" placeholder="No of occupants in whole unit" class="input-border-box">{{noofoccupants}}</ion-input>
   </div>
   <div class="padding-left-right-30" padding-bottom>
-    <ion-input type="text" [(ngModel)]="noofobedrooms" placeholder="No. of Bedrooms" class="input-border-box"></ion-input>
+    <ion-input type="text" [(ngModel)]="noofrooms" placeholder="No. of Bedrooms" class="input-border-box">{{noofrooms}}</ion-input>
   </div>
   <div text-center padding>
     <button ion-button medium color="danger" (click)="next()">

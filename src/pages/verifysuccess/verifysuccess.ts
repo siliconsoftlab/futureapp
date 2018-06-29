@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { VerifyerrorPage } from '../verifyerror/verifyerror';
+
+import { UploadPage } from '../upload/upload';
 /**
  * Generated class for the VerifysuccessPage page.
  *
@@ -19,11 +20,11 @@ export class VerifysuccessPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad VerifysuccessPage');
+    //console.log('ionViewDidLoad VerifysuccessPage');
   }
   uploadphotos() {
 
-    this.navCtrl.push(VerifyerrorPage);
+    this.navCtrl.push(UploadPage);
 
   }
 }

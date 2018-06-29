@@ -3,6 +3,10 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { FormBuilder, Validators } from '@angular/forms';
 import { User } from '../user';
 import { VerifyPage } from '../verify/verify';
+import { UserResponse } from '../UserResponse';
+import { ValidateInput } from '../ValidateInput';
+
+
 
 /**
  * Generated class for the ValidatePage page.
@@ -17,17 +21,36 @@ import { VerifyPage } from '../verify/verify';
   templateUrl: 'validate.html',
 })
 export class ValidatePage {
-user: User;
+  user: UserResponse;
+  validate: ValidateInput;
+  nric: string;
+  fullname: string;
+  contactno: string;
+  street: string;
+  unitno: string;
+  postalcode: string;
+  noofoccupants: number;
+  noofrooms: number;
+  userRes: UserResponse;
   constructor(public navCtrl: NavController, public navParams: NavParams, public fb: FormBuilder) {
-   // this.user=this.fb.group({username:['',Validators.required]});
+    // this.user=this.fb.group({username:['',Validators.required]});
+    this.userRes=this.navParams.get('data');
+    
+    this.fullname = this.userRes.fullname;
+    this.nric = this.userRes.nric;
+
+    // this.validate.fullname=this.user.fullname;
+    //this.validate.nric=this.user.nric;
+    // alert("Input from home page "+this.user.nric);
+
+
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ValidatePage');
+   // console.log('ionViewDidLoad ValidatePage');
   }
-  next(){
-   
-       this.navCtrl.push(VerifyPage);
-   
-   }
+  next() {
+   this.navCtrl.push(VerifyPage,{"nric":this.nric,"fullname":this.fullname,"contactno":this.contactno,"street":this.street,"unitno":this.unitno,"postalcode":this.postalcode,"noofoccupants":this.noofoccupants,"noofrooms":this.noofrooms});
+
+  }
 }

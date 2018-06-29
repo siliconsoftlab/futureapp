@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-
+import { HttpModule } from '@angular/http';
 import { HomePage } from '../pages/home/home';
 import { ValidatePage } from '../pages/validate/validate';
 import { SubmissionsuccessPage } from '../pages/submissionsuccess/submissionsuccess';
@@ -16,7 +16,7 @@ import { ViewconfirmationPage } from '../pages/viewconfirmation/viewconfirmation
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = HomePage;
+  rootPage:any = UploadPage; 
   
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {

@@ -200,4 +200,9 @@
   .font085{
     font-size: 0.85em !important;
   }
-    
+  ion-avatar,
+  ion-avatar > img{
+      border-radius:50%;
+      height:8rem;
+      width:8rem;
+  }
