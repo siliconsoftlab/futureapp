@@ -13,6 +13,7 @@ import { HomePage } from '../pages/home/home';
 import { ValidatePage } from '../pages/validate/validate';
 import { SubmissionsuccessPage } from '../pages/submissionsuccess/submissionsuccess';
 import { UploadPage } from '../pages/upload/upload';
+import { UploadpicPage } from '../pages/uploadpic/uploadpic';
 import { VerifyPage } from '../pages/verify/verify';
 import { VerifyerrorPage } from '../pages/verifyerror/verifyerror';
 import { VerifysuccessPage } from '../pages/verifysuccess/verifysuccess';
@@ -32,7 +33,8 @@ import { GeoServiceProvider } from '../providers/geo-service/geo-service';
     VerifyPage,
     VerifyerrorPage,
     VerifysuccessPage,
-    ViewconfirmationPage
+    ViewconfirmationPage,
+    UploadpicPage
   ],
   imports: [
     BrowserModule,
@@ -50,7 +52,8 @@ import { GeoServiceProvider } from '../providers/geo-service/geo-service';
     VerifyPage,
     VerifyerrorPage,
     VerifysuccessPage,
-    ViewconfirmationPage
+    ViewconfirmationPage,
+    UploadpicPage
   ],
   providers: [
     StatusBar,

@@ -39,8 +39,7 @@ export class VerifyPage {
     this.postalcode = this.navParams.get('postalcode');
     this.noofoccupants = this.navParams.get('noofoccupants');
     this.noofrooms = this.navParams.get('noofrooms');
-
-    this.geoLocate();
+     this.geoLocate();
   }
 
   ionViewDidLoad() {
@@ -82,7 +81,7 @@ export class VerifyPage {
           //console.log(' res.entries() ' + res.entries());
          console.log(' reverseGeocode.length ' + res.length);
           console.log(JSON.stringify(res));
-          alert("Address " + JSON.stringify(res))
+          alert("You are located approximately nearby this  address " + JSON.stringify(res))
           for (let re of res) {
             console.log(re.thoroughfare);
             console.log(re.postalCode);
@@ -140,10 +139,10 @@ export class VerifyPage {
 
     if (d <= 500) {
       this.loader.dismiss();
-      this.navCtrl.push(VerifysuccessPage);
+      this.navCtrl.push(VerifysuccessPage,{"nric":this.nric,"fullname":this.fullname,"contactno":this.contactno,"street":this.street,"unitno":this.unitno,"postalcode":this.postalcode,"noofoccupants":this.noofoccupants,"noofrooms":this.noofrooms});
     } else {
       this.loader.dismiss();
-      this.navCtrl.push(VerifyerrorPage);
+      this.navCtrl.push(VerifyerrorPage,{"nric":this.nric,"fullname":this.fullname,"contactno":this.contactno,"street":this.street,"unitno":this.unitno,"postalcode":this.postalcode,"noofoccupants":this.noofoccupants,"noofrooms":this.noofrooms});
     }
     return d; // returns the distance in meter
   };

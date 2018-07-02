@@ -11,12 +11,13 @@ import { VerifyPage } from '../pages/verify/verify';
 import { VerifyerrorPage } from '../pages/verifyerror/verifyerror';
 import { VerifysuccessPage } from '../pages/verifysuccess/verifysuccess';
 import { ViewconfirmationPage } from '../pages/viewconfirmation/viewconfirmation';
+import { UploadpicPage } from '../pages/uploadpic/uploadpic';
 //import { ValidatePage } from '../pages/validate/validate';
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = UploadPage; 
+  rootPage:any = HomePage; 
   
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {

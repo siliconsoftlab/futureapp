@@ -16,8 +16,12 @@ import { resolveDefinition } from '@angular/core/src/view/util';
   templateUrl: 'home.html'
 })
 export class HomePage {
-  fin: string;
-  password: string;
+  /*fin: string;
+  password: string;*/
+  fin: string ='G5415489P';
+
+
+  password: string='1234';
   data: any;
   url: any = "http://futureapp.pixart.com.sg/login.aspx";
   user: User = { "username": "admin", "password": "aaaa" };
@@ -82,7 +86,9 @@ export class HomePage {
     //alert("loginstatus "+data);
 if(this.usrres.loginstatus=="success"){
   this. loader.dismiss();
-  this.navCtrl.push(ValidatePage, { "data": this.usrres });
+ // this.navCtrl.push(ValidatePage, { "data": this.usrres });
+  this.navCtrl.push(ValidatePage, {"nric":this.usrres.nric,"fullname":this.usrres.fullname});
+  
 }else{
   this. loader.dismiss();
   alert("Invalid Username/Password");

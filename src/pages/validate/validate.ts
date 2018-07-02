@@ -25,19 +25,28 @@ export class ValidatePage {
   validate: ValidateInput;
   nric: string;
   fullname: string;
-  contactno: string;
+ /* contactno: string;
   street: string;
   unitno: string;
   postalcode: string;
   noofoccupants: number;
-  noofrooms: number;
+  noofrooms: number;*/
+ 
+
+  contactno: string='98718177';
+  street: string='Lorong 4 Geylang';
+  unitno: string='47a';
+  postalcode: string='399291';
+  noofoccupants: number=10;
+  noofrooms: number=3;
+
   userRes: UserResponse;
   constructor(public navCtrl: NavController, public navParams: NavParams, public fb: FormBuilder) {
     // this.user=this.fb.group({username:['',Validators.required]});
-    this.userRes=this.navParams.get('data');
+   // this.userRes=this.navParams.get('data');
     
-    this.fullname = this.userRes.fullname;
-    this.nric = this.userRes.nric;
+    this.fullname = this.navParams.get('nric');
+    this.nric = this.navParams.get('fullname');
 
     // this.validate.fullname=this.user.fullname;
     //this.validate.nric=this.user.nric;
