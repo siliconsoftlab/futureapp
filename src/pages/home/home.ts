@@ -8,7 +8,8 @@ import { Http, Response } from '@angular/http';
 import { Headers, RequestOptions } from '@angular/http';
 import { User } from '../user';
 import { UserResponse } from '../UserResponse';
-import { resolveDefinition } from '@angular/core/src/view/util';
+import {TestProvider} from '../../providers/test/test'
+
 
 
 @Component({
@@ -16,37 +17,59 @@ import { resolveDefinition } from '@angular/core/src/view/util';
   templateUrl: 'home.html'
 })
 export class HomePage {
-  /*fin: string;
+ /* fin: string;
   password: string;*/
-  fin: string ='G5415489P';
+  timeInSeconds:any;
+  time:any;
+  runTimer:any;
+  hasStarted:any;
+  hasFinished:any;
+  remainingTime:any;
+  displayTime:any;
+  loader:any;
 
-
+ fin: string ='G5415489P';
   password: string='1234';
   data: any;
   url: any = "http://futureapp.pixart.com.sg/login.aspx";
   user: User = { "username": "admin", "password": "aaaa" };
  // userRes: UserResponse = { "nric": "G564638D", "fullname": "Xu Xia", "company": "", "jobtitle": "", "loginstatus": "success" };
-  loader = this.loadingCtrl.create({
-  content: "Please wait...",      
-});
+ 
   usrres: UserResponse;
   
-  constructor(public navCtrl: NavController, public loadingCtrl: LoadingController, private http: Http) {
+  constructor(public navCtrl: NavController, public loadingCtrl: LoadingController, private http: Http,private testService:TestProvider) {
     var headers = new Headers();
     headers.append('Access-Control-Allow-Origin', '*');
     headers.append('Access-Control-Allow-Methods', 'POST, GET, OPTIONS, PUT');
     headers.append('Accept', 'application/json');
     headers.append('content-type', 'application/json');
-  
+    
       //alert("FIN "+ this.fin+" Password "+this.password);
     // this.presentLoading();
     // this.navCtrl.push(ValidatePage);
     //  this.login();
-
+    this.testService.getData().then(result=>{
+     // alert(result); console.log("result: "+result);
+    });
   }
  
   login() {
-   this. loader.present();
+
+   // alert("is null "+this.isnull(this.fin));
+       // alert("FIN "+ this.fin+" Password "+this.password);
+   // alert(" login inside");
+
+   this.loader = this.loadingCtrl.create({
+    content: "Please wait...",      
+  });
+    if(this.isnull(this.fin)){
+      alert("Please Enter Your FinNo.");
+      return;
+   }else if(this.isnull(this.password)){
+    alert("Please Enter Your Password");
+    return;
+   }else{
+     this. loader.present();
     let headers = new Headers();
     headers.append('Access-Control-Allow-Origin', '*');
      headers.append('Access-Control-Allow-Methods', 'POST, GET, OPTIONS, PUT');
@@ -106,7 +129,7 @@ if(this.usrres.loginstatus=="success"){
      
       });*/
   }
-
+  }
 
 
 
@@ -116,6 +139,13 @@ if(this.usrres.loginstatus=="success"){
     });
     loader.present();
   }
+
+  
+
+isnull(value ){
+  return !value;
+}
+  
 }
 interface Weather {
   nric: string;

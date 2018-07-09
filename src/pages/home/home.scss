@@ -2,4 +2,8 @@ page-home {
     .no-scroll .scroll-content{
         overflow: hidden;
       }
+     .item-inner{
+        border: none !important;
+        box-shadow: none !important;
+      }
 }

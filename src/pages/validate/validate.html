@@ -51,7 +51,56 @@
     <ion-label color="danger" class="fnt15 no-btm-margin " style="font-weight: bold">{{fullname}}</ion-label>
     <ion-label class="fnt75 no-margin">{{nric}}</ion-label>
   </div>
-  <div class="padding-left-right-30"padding16>
+
+
+
+ <!-- <ion-list  >
+
+    <ion-item class="padding-left-right-30" style="border: none;box-shadow: none;" padding-bottom>
+     
+      <ion-input type="text" [(ngModel)]="fin" placeholder="FIN NO."  class="input-border-box"></ion-input>
+    </ion-item>
+
+    <ion-item class="padding-left-right-30" style="border: none;box-shadow: none;" padding-bottom>
+     
+      <ion-input type="password" [(ngModel)]="password"  placeholder="Password"  class="input-border-box"></ion-input>
+    </ion-item>
+ 
+    
+  </ion-list>-->
+
+
+  <ion-list style=" margin: -1px 0 7px;" >
+  <ion-item class="padding-left-right-30 padding16" style="border: none;box-shadow: none;">
+    <ion-input type="number" [(ngModel)]="contactno" placeholder="Enter Contact No." class="input-border-box fnt075">{{contactno}}</ion-input>
+  </ion-item>
+  <ion-item class="padding-left-right-30" style="border: none;box-shadow: none;">
+    <ion-label text-center class="fnt1"  style="margin-bottom: 4px;" >Resdential Address</ion-label>
+     
+    </ion-item>
+  <ion-item class="padding-left-right-30 padding16" style="border: none;box-shadow: none;">
+      <ion-input type="text" [(ngModel)]="street" placeholder="Street" class="input-border-box fnt075">{{street}}</ion-input>
+  </ion-item>
+  <ion-item class="padding-left-right-30 padding16" style="border: none;box-shadow: none;">
+    <ion-input type="text" [(ngModel)]="unitno" placeholder="Unit No." class="input-border-box fnt075">{{unitno}}</ion-input>
+  </ion-item>
+  <ion-item class="padding-left-right-30 padding16" style="border: none;box-shadow: none;">
+    <ion-input type="number" [(ngModel)]="postalcode" placeholder="Postal Code" class="input-border-box fnt075">{{postalcode}}</ion-input>
+  </ion-item>
+  <ion-item class="padding-left-right-30 " style="border: none;box-shadow: none;">
+    <ion-label text-center class="fnt1" style="margin-bottom: 4px;">Unit Detail</ion-label>
+     
+   </ion-item>
+  <ion-item class="padding-left-right-30 padding16" style="border: none;box-shadow: none;">
+   <!--   <ion-label text-center class="fnt125" style="margin-bottom: 4px;">Unit Detail</ion-label>-->
+    <ion-input type="number" [(ngModel)]="noofoccupants" placeholder="No of occupants in whole unit" class="input-border-box fnt075">{{noofoccupants}}</ion-input>
+  </ion-item>
+  <ion-item class="padding-left-right-30" padding-bottom style="border: none;box-shadow: none;">
+    <ion-input type="number" [(ngModel)]="noofrooms" placeholder="No. of Bedrooms" class="input-border-box fnt075">{{noofrooms}}</ion-input>
+  </ion-item>
+
+</ion-list>
+ <!-- <div class="padding-left-right-30"padding16>
     <ion-input type="text" [(ngModel)]="contactno" placeholder="Enter Contact No." class="input-border-box">{{contactno}}</ion-input>
   </div>
   <div class="padding-left-right-30 padding16">
@@ -71,8 +120,14 @@
   </div>
   <div class="padding-left-right-30" padding-bottom>
     <ion-input type="text" [(ngModel)]="noofrooms" placeholder="No. of Bedrooms" class="input-border-box">{{noofrooms}}</ion-input>
-  </div>
-  <div text-center padding>
+  </div>-->
+
+
+
+
+
+
+  <div text-center padding-left-right-bottom>
     <button ion-button medium color="danger" (click)="next()">
       Next
     </button>

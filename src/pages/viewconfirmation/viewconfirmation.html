@@ -138,21 +138,43 @@
 
     <ion-row padding-top margin-left margin-right class="margin-left-right10">
       <ion-col col-12>
-        <img src="assets/imgs/room1.png" width="100%" >
+     <!--   <img src="assets/imgs/room1.png" width="100%" >-->
+     <img [src]="maindoorpic" width="100%">
         <ion-label no-margin style="font-weight:  bold;     padding-top: 2%;">MAIN DOOR</ion-label>
       </ion-col>
     </ion-row>
 
     <ion-row padding-top margin-left margin-right class="margin-left-right10">
       <ion-col col-12>
-        <img src="assets/imgs/room1.png" width="100%">
+        <img [src]="livingroompic" width="100%">
         <ion-label no-margin  style="font-weight:  bold;     padding-top: 2%;">LIVING ROOM</ion-label>
       </ion-col>
     </ion-row>
 
     <ion-row padding-top margin-left margin-right class="margin-left-right10">
       <ion-col col-12>
-        <img src="assets/imgs/room1.png" width="100%">
+        <img [src]="kitchenpic" width="100%">
+        <ion-label no-margin  style="font-weight:  bold;    padding-top: 2%;">BED ROOM1</ion-label>
+      </ion-col>
+    </ion-row>
+
+    <ion-row padding-top margin-left margin-right class="margin-left-right10">
+      <ion-col col-12>
+        <img [src]="bedroom1pic" width="100%">
+        <ion-label no-margin style="font-weight:  bold;     padding-top: 2%;">MAIN DOOR</ion-label>
+      </ion-col>
+    </ion-row>
+
+    <ion-row padding-top margin-left margin-right class="margin-left-right10">
+      <ion-col col-12>
+        <img [src]="bedroom2pic" width="100%">
+        <ion-label no-margin  style="font-weight:  bold;     padding-top: 2%;">LIVING ROOM</ion-label>
+      </ion-col>
+    </ion-row>
+
+    <ion-row padding-top margin-left margin-right class="margin-left-right10">
+      <ion-col col-12>
+        <img [src]="bedroombpic" width="100%">
         <ion-label no-margin  style="font-weight:  bold;    padding-top: 2%;">BED ROOM1</ion-label>
       </ion-col>
     </ion-row>
@@ -160,7 +182,7 @@
     <ion-row no-margin no-padding padding-top>
       <ion-col col-12 style="background-color: #dcdcdc">
         <ion-label no-margin style=" display: inline-block;font-weight: bold; padding-top: 8px;" color="danger">TIME LEFT: </ion-label>
-        <ion-label no-margin style=" display: inline-block; padding-top: 8px;">05:45</ion-label>
+        <ion-label no-margin style=" display: inline-block; padding-top: 8px;">{{displayTime}}</ion-label>
       </ion-col>
     </ion-row>
 

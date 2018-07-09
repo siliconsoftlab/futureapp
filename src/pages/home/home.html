@@ -14,12 +14,29 @@
       </ion-buttons>
     </div>
   </div>
-  <div class="padding-left-right-30" padding-bottom>
+  <!--<div class="padding-left-right-30" padding-bottom>
       <ion-input type="text" [(ngModel)]="fin" placeholder="FIN NO." class="input-border-box"></ion-input>
   </div>
   <div class="padding-left-right-30" padding-bottom>
     <ion-input type="text" [(ngModel)]="password" placeholder="Password" class="input-border-box"></ion-input>
-  </div>
+  </div>-->
+
+  <ion-list  >
+
+    <ion-item class="padding-left-right-30" style="border: none;box-shadow: none;" padding-bottom>
+     
+      <ion-input type="text" [(ngModel)]="fin" placeholder="FIN NO."  class="input-border-box"></ion-input>
+    </ion-item>
+
+    <ion-item class="padding-left-right-30" style="border: none;box-shadow: none;" padding-bottom>
+     
+      <ion-input type="password" [(ngModel)]="password"  placeholder="Password"  class="input-border-box"></ion-input>
+    </ion-item>
+ 
+    
+  </ion-list>
+
+
   <div text-center class="padding-left-right-30">
     <button ion-button large full block color="danger"  (click)="login()">
       Login

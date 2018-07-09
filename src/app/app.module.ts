@@ -4,6 +4,7 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { Geolocation } from '@ionic-native/geolocation';
 import { NativeGeocoder, NativeGeocoderReverseResult, NativeGeocoderForwardResult } from '@ionic-native/native-geocoder';
@@ -20,6 +21,10 @@ import { VerifysuccessPage } from '../pages/verifysuccess/verifysuccess';
 import { ViewconfirmationPage } from '../pages/viewconfirmation/viewconfirmation';
 import { FormsModule } from '@angular/forms';
 import { GeoServiceProvider } from '../providers/geo-service/geo-service';
+import { TimerProvider} from '../providers/timer/timer';
+
+import { TestProvider } from '../providers/test/test';
+
 
 
 
@@ -39,6 +44,7 @@ import { GeoServiceProvider } from '../providers/geo-service/geo-service';
   imports: [
     BrowserModule,
     HttpModule,
+    HttpClientModule,
     FormsModule,
     IonicModule.forRoot(MyApp)
   ],
@@ -62,8 +68,13 @@ import { GeoServiceProvider } from '../providers/geo-service/geo-service';
     Geolocation,
     GeoServiceProvider,
     NativeGeocoder,
+    TimerProvider,
     LocationAccuracy,
-     {provide: ErrorHandler, useClass: IonicErrorHandler} 
+  
+     {provide: ErrorHandler, useClass: IonicErrorHandler},
+    TimerProvider,
+    TimerProvider,
+    TestProvider 
   ]
 })
 export class AppModule {}

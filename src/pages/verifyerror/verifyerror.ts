@@ -40,6 +40,6 @@ export class VerifyerrorPage {
     //console.log('ionViewDidLoad VerifyerrorPage');
   }
   gotovalidatepage() {
-    this.navCtrl.push(ValidatePage,{"nric":this.nric,"fullname":this.fullname});
+    this.navCtrl.push(ValidatePage,{"nric":this.nric,"fullname":this.fullname,"contactno":this.contactno,"street":this.street,"unitno":this.unitno,"postalcode":this.postalcode,"noofoccupants":this.noofoccupants,"noofrooms":this.noofrooms});
   }
 }
