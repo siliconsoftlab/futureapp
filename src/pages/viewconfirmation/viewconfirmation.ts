@@ -38,12 +38,18 @@ export class ViewconfirmationPage {
 
   maindoorpic: string;
   livingroompic: string;
+  livingroom1pic: string;
+  cmntoiletpic: string;
   kitchenpic: string;
   bedroom1pic: string;
   bedroom2pic: string;
   bedroombpic: string;
   bedroomcpic: string;
   bedroomdpic: string;
+
+  public isThirdBedRoom: boolean;
+  public isfourthBedRoom: boolean;
+  public isrowVisbile: boolean;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.fullname = this.navParams.get('fullname');
@@ -57,6 +63,23 @@ export class ViewconfirmationPage {
     this.remainingtimeres = this.navParams.get('remainingtime');
 
 
+    if (this.noofrooms == 3 || this.noofrooms == 4) {
+      this.isrowVisbile = true;
+    } else {
+      this.isrowVisbile = false;
+    }
+
+    if (this.noofrooms == 3) {
+      this.isThirdBedRoom = true;
+    } else if (this.noofrooms == 4) {
+      this.isThirdBedRoom = true;
+      this.isfourthBedRoom = true;
+    } else {
+      this.isThirdBedRoom = false;
+      this.isfourthBedRoom = false;
+    }
+
+
     this.maindoorpic = this.navParams.get('maindoorpic');
     this.livingroompic = this.navParams.get('livingroompic');
     this.kitchenpic = this.navParams.get('kitchenpic');
@@ -64,6 +87,12 @@ export class ViewconfirmationPage {
     this.bedroom2pic = this.navParams.get('bedroom2pic');
     this.bedroombpic = this.navParams.get('bedroombpic');
 
+
+    this.livingroom1pic = this.navParams.get('livingroom1pic');
+    this.cmntoiletpic = this.navParams.get('cmntoilet');
+    this.bedroomcpic = this.navParams.get('bedroomcpic');
+    this.bedroomdpic = this.navParams.get('bedroomdpic');
+    
 
 
 

@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { NavController, Alert } from 'ionic-angular';
+import { NavController, Alert,AlertController,ModalController } from 'ionic-angular';
 import { LoadingController } from 'ionic-angular';
 import { ValidatePage } from '../validate/validate';
-
+import { InstructionsPage } from '../instructions/instructions';
 import 'rxjs/add/operator/map'
 import { Http, Response } from '@angular/http';
 import { Headers, RequestOptions } from '@angular/http';
@@ -17,7 +17,7 @@ import {TestProvider} from '../../providers/test/test'
   templateUrl: 'home.html'
 })
 export class HomePage {
- /* fin: string;
+ /*fin: string;
   password: string;*/
   timeInSeconds:any;
   time:any;
@@ -37,7 +37,7 @@ export class HomePage {
  
   usrres: UserResponse;
   
-  constructor(public navCtrl: NavController, public loadingCtrl: LoadingController, private http: Http,private testService:TestProvider) {
+  constructor(public navCtrl: NavController, public loadingCtrl: LoadingController, private http: Http,private testService:TestProvider, private alertCtrl: AlertController, private mctrl:ModalController) {
     var headers = new Headers();
     headers.append('Access-Control-Allow-Origin', '*');
     headers.append('Access-Control-Allow-Methods', 'POST, GET, OPTIONS, PUT');
@@ -62,7 +62,10 @@ export class HomePage {
    this.loader = this.loadingCtrl.create({
     content: "Please wait...",      
   });
+
+
     if(this.isnull(this.fin)){
+     // this.presentAlert();
       alert("Please Enter Your FinNo.");
       return;
    }else if(this.isnull(this.password)){
@@ -145,7 +148,15 @@ if(this.usrres.loginstatus=="success"){
 isnull(value ){
   return !value;
 }
-  
+presentAlert() {
+  let alert = this.alertCtrl.create({
+    title: '<div id=one> Instructions on photo taking</div><div  id="two"> for</div><div id="three">LIVING ROOM  1</div>',
+    subTitle: '<div no-margin text-center>Lorem ipsum dolor sit amet,</div> <div no-margin text-center>consectetur adipiscing elit, Aenean</div>   <div no-margin text-center>aliquet molestie odio, vitae ornare.</div>    <div no-margin text-center>Lorem ipsum dolor sit amet,</div>   <div no-margin text-center>consectetur adipiscing elit, Aenean</div>    <div no-margin text-center>aliquet molestie odio.</div>',
+    buttons: ['OK'],
+    enableBackdropDismiss: false
+  });
+  alert.present();
+}
 }
 interface Weather {
   nric: string;

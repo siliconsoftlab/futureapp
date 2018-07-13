@@ -208,3 +208,39 @@
       height:8rem;
       width:8rem;
   }
+  
+.alert-md .alert-wrapper{
+    max-width: 100%;
+  }
+  
+  .alert-title div:nth-child(1) {
+    font-size: 1em;
+    color: black;
+    text-align: center
+  }
+  
+  .alert-title div:nth-child(2) {
+    font-size: 1em;
+    color: black;
+    text-align: center
+  }
+  .alert-title div:nth-child(3) {
+    font-size: 1.5em;
+    color: #f5821f;
+    text-align: center
+  }
+  .alert-sub-title{
+    text-align: center
+  }
+  .alert-md .alert-button{
+  color: black;
+  }
+  .alert-md .alert-button-group{
+    background-color:#f5821f;
+  }
+
+  alert-md .alert-button {
+    color: white;
+    font-size: 20px;
+}
+  
