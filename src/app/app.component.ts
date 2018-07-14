@@ -17,6 +17,7 @@ import { UploadpicPage } from '../pages/uploadpic/uploadpic';
   templateUrl: 'app.html'
 })
 
+
 export class MyApp {
   rootPage:any = HomePage; 
     constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {

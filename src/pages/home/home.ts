@@ -10,8 +10,6 @@ import { User } from '../user';
 import { UserResponse } from '../UserResponse';
 import {TestProvider} from '../../providers/test/test'
 
-
-
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -28,7 +26,7 @@ export class HomePage {
   displayTime:any;
   loader:any;
 
- fin: string ='G5415489P';
+  fin: string ='G5415489P';
   password: string='1234';
   data: any;
   url: any = "http://futureapp.pixart.com.sg/login.aspx";
