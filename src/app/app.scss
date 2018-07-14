@@ -33,11 +33,12 @@
   }
 
   .smalllogo {
-    width: 4em;
+    width: 5.5em;
     border-radius: 10%;
     font-size: .5em;
     margin-top: 1em;
     padding-right: 1em;
+    margin-left: 3.4em;
   }
   .fnt075 {
     font-size: 0.75em !important;
@@ -83,7 +84,7 @@
 }
 
 .verify-bg{
-    background-color: #21909B ;
+    background-color: #F3882C;
 }
 .line{
     border: 1px solid #eaeaea;
@@ -111,7 +112,7 @@
         border-bottom: 1px solid #39660F;
       }
       .circle {
-        background-color:#21909B;
+        background-color:#0093C8;
         border:2px solid white;    
         height:30px;
         border-radius:50%;
@@ -120,7 +121,7 @@
         width:30px;
     }
     .circle-light {
-        background-color:#A9D0D7;
+        background-color:#99D3E7;
         border:2px solid white;    
         height:30px;
         border-radius:50%;
@@ -243,4 +244,10 @@
     color: white;
     font-size: 20px;
 }
-  
+.alert-md .alert-button {
+    float: none;
+    margin: 0 auto;
+    color: #fff;
+    font-size: 1.5em;
+       }
+       

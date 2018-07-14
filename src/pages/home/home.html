@@ -1,61 +1,33 @@
 <ion-content padding no-bounce>
   <div text-center padding-bottom>
     <div class="logo">
-      <img src="assets/imgs/logo.png">
+      <img src="assets/imgs/logo1.png">
     </div>
     <div style="font-size: 1.2em;">
-      <ion-label no-margin > FOREIGN WORKER</ion-label>
+      <ion-label no-margin> FOREIGN WORKER</ion-label>
       <ion-label no-margin> ADDRESS UPDATING SYSTEM</ion-label>
     </div>
     <div style="padding-top: 8%">
       <ion-buttons text-center>
-        <button ion-button small color="lightgreen">English</button>
-        <button ion-button small outline>中文</button>
+        <button ion-button small color="bluetheme" style="text-transform: none;">English</button>
+        <button ion-button small outline color="bluetheme">中文</button>
       </ion-buttons>
     </div>
   </div>
-  <!--<div class="padding-left-right-30" padding-bottom>
+
+  <ion-list style="padding-top: 13%;">
+    <ion-item class="padding-left-right-30" style="border: none;box-shadow: none;" padding-bottom>
       <ion-input type="text" [(ngModel)]="fin" placeholder="FIN NO." class="input-border-box"></ion-input>
-  </div>
-  <div class="padding-left-right-30" padding-bottom>
-    <ion-input type="text" [(ngModel)]="password" placeholder="Password" class="input-border-box"></ion-input>
-  </div>-->
-
-  <ion-list  >
-
-    <ion-item class="padding-left-right-30" style="border: none;box-shadow: none;" padding-bottom>
-     
-      <ion-input type="text" [(ngModel)]="fin" placeholder="FIN NO."  class="input-border-box"></ion-input>
     </ion-item>
-
     <ion-item class="padding-left-right-30" style="border: none;box-shadow: none;" padding-bottom>
-     
-      <ion-input type="password" [(ngModel)]="password"  placeholder="Password"  class="input-border-box"></ion-input>
+      <ion-input type="password" [(ngModel)]="password" placeholder="Password" class="input-border-box"></ion-input>
     </ion-item>
- 
-    
   </ion-list>
-
-
-  <div text-center class="padding-left-right-30">
-    <button ion-button large full block color="danger"  (click)="login()">
+  <div text-center class="padding-left-right-30" style="padding-top: 5%;">
+    <button ion-button large full block color="btnorange" (click)="login()" style="text-transform: none;">
       Login
     </button>
   </div>
- <!-- <ion-list class="list-form" padding>
-    <ion-item>
-      <ion-label floating>FIN NO.</ion-label>
-      <ion-input type="text" [(ngModel)]="fin"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label floating>Password</ion-label>
-      <ion-input type="password" [(ngModel)]="password"></ion-input>
-    </ion-item>
-    <div padding>
-      <button ion-button large full block color="danger" (click)="login()">
-        Login
-      </button>
-    </div>
-  </ion-list>-->
-  <ion-label style="text-align: center;" padding class="padding-top30"> @ 2018 Future Employment Pte Ltd.</ion-label>
+
+  <!-- <ion-label style="text-align: center;" padding class="padding-top30"> @ 2018 Future Employment Pte Ltd.</ion-label>-->
 </ion-content>

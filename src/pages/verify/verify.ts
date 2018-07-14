@@ -43,7 +43,7 @@ export class VerifyPage {
     /*console.log(' this.street ' + this.street);
     console.log(' this.unitno ' + this.unitno);
     console.log(' this.postalcode ' + this.postalcode);*/
-    this.geoLocate();
+   this.geoLocate();
 
     //this.test();
   }
@@ -53,7 +53,7 @@ export class VerifyPage {
 
   geoLocate() {
     // alert("1");console.log("1");
-    this.loader.present();
+    //this.loader.present();
     let options = {
       enableHighAccuracy: true
     };
@@ -123,7 +123,7 @@ export class VerifyPage {
       .catch((error: Error) => {
         console.log('Error retriving the geo location of given address ', JSON.stringify(error));
         alert("Please Enter Correct Address.  " + JSON.stringify(error));
-        this.loader.dismiss();
+       // this.loader.dismiss();
         this.navCtrl.pop();
         //this.navCtrl.pop
         // this.navCtrl.setRoot(ValidatePage, { "nric": this.nric, "fullname": this.fullname });
@@ -153,11 +153,11 @@ export class VerifyPage {
     console.log("getDistance " + d);
 
     if (d <= 200) {
-      this.loader.dismiss();
+     // this.loader.dismiss();
       //this.navCtrl.setRoot(VerifysuccessPage, { "nric": this.nric, "fullname": this.fullname, "contactno": this.contactno, "street": this.street, "unitno": this.unitno, "postalcode": this.postalcode, "noofoccupants": this.noofoccupants, "noofrooms": this.noofrooms });
       this.navCtrl.push(VerifysuccessPage, { "nric": this.nric, "fullname": this.fullname, "contactno": this.contactno, "street": this.street, "unitno": this.unitno, "postalcode": this.postalcode, "noofoccupants": this.noofoccupants, "noofrooms": this.noofrooms });
     } else {
-      this.loader.dismiss();
+      //this.loader.dismiss();
       this.navCtrl.push(VerifyerrorPage, { "nric": this.nric, "fullname": this.fullname, "contactno": this.contactno, "street": this.street, "unitno": this.unitno, "postalcode": this.postalcode, "noofoccupants": this.noofoccupants, "noofrooms": this.noofrooms });
     }
     return d; // returns the distance in meter

@@ -113,7 +113,7 @@ export class HomePage {
 if(this.usrres.loginstatus=="success"){
   this. loader.dismiss();
  // this.navCtrl.push(ValidatePage, { "data": this.usrres });
-  this.navCtrl.push(ValidatePage, {"nric":this.usrres.nric,"fullname":this.usrres.fullname});
+  this.navCtrl.push(ValidatePage, {"nric":this.usrres.fullname,"fullname":this.usrres.nric});
   
 }else{
   this. loader.dismiss();

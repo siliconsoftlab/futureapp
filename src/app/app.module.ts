@@ -24,7 +24,7 @@ import { GeoServiceProvider } from '../providers/geo-service/geo-service';
 import { TimerProvider} from '../providers/timer/timer';
 
 import { TestProvider } from '../providers/test/test';
-
+import {ComponentsModule} from '../components/components.module'
 
 
 
@@ -40,12 +40,14 @@ import { TestProvider } from '../providers/test/test';
     VerifysuccessPage,
     ViewconfirmationPage,
     UploadpicPage
+    
   ],
   imports: [
     BrowserModule,
     HttpModule,
     HttpClientModule,
     FormsModule,
+    ComponentsModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
