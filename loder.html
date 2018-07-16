@@ -10,14 +10,26 @@
     border-radius: 50%;
     width: 120px;
     height: 120px;
-    margin-top: -138px;
     animation: spin 2s linear infinite;
 	
 }
-.image-loader{
-margin-left:5px;
+ .fix-image{
+   position:absolute;
+   top: 12px;
+   left: 14px;
+  }
+.whole-loader{
+  position:fixed;
+  margin:auto;
+  top:40%;
+  left:40%;
+  bottom:0;
+  right:0;
 }
-
+@-webkit-keyframes spin{
+  0% { -webkit-transform:rotate(0deg);}
+   100% { -webkit-transform: rotate(360deg); }
+  }
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
@@ -25,9 +37,10 @@ margin-left:5px;
 </style>
 </head>
 <body>
-<img class="image-loader" src="home-icon.gif"/>
+  <div class="whole-loader">
+    <div class="fix-image"><img src="home-icon.gif"/></div>
 <div class="loader"></div>
-
+  </div>
 
 </body>
 </html>
