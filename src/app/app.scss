@@ -14,6 +14,29 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+@font-face{
+    font-family: Work Sans Medium;
+    src: url('../assets/fonts/QGYpz_wNahGAdqQ43Rh3j4P8mNhN.woff2')
+}
+@font-face{
+    font-family: Work Sans Regular;
+    src: url('../assets/fonts/QGYsz_wNahGAdqQ43Rh_fKDp.woff2')
+}
+@font-face{
+    font-family: Work Sans SemiBold;
+    src: url('../assets/fonts/QGYpz_wNahGAdqQ43Rh3o4T8mNhN.woff2')
+}
+@font-face{
+    font-family: Work Sans Bold;
+    src: url('../assets/fonts/QGYpz_wNahGAdqQ43Rh3x4X8mNhN.woff2')
+}
+
+*{
+    font-family: Work Sans Regular;
+    font-family: Work Sans Medium;
+    font-family: Work Sans SemiBold;
+    font-family: Work Sans Bold;
+}
 .logo {
     margin: 20px auto 0;
     width: 4em;
@@ -84,7 +107,7 @@
 }
 
 .verify-bg{
-    background-color: #F3882C;
+    background-color: #ec8924;
 }
 .line{
     border: 1px solid #eaeaea;
@@ -121,7 +144,7 @@
         width:30px;
     }
     .circle-light {
-        background-color:#99D3E7;
+        background-color:#99D3E9;
         border:2px solid white;    
         height:30px;
         border-radius:50%;
@@ -249,5 +272,6 @@
     margin: 0 auto;
     color: #fff;
     font-size: 1.5em;
+    text-transform: none;
        }
        

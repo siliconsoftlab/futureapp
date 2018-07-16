@@ -328,7 +328,15 @@ export class UploadpicPage {
 
       this.navCtrl.push(ViewconfirmationPage, { "nric": this.nric, "fullname": this.fullname, "contactno": this.contactno, "street": this.street, "unitno": this.unitno, "postalcode": this.postalcode, "noofoccupants": this.noofoccupants, "noofrooms": this.noofrooms, "remainingtime": this.remainingTime, "maindoorpic": this.maindoorpic, "livingroompic": this.livingroompic, "kitchenpic": this.kitchenpic, "bedroom1pic": this.bedroom1pic, "bedroom2pic": this.bedroom2pic, "bedroombpic": this.bedroombpic, "livingroom1pic": this.livingroom1pic, "cmntoilet": this.cmntoiletpic, "bedroomcpic": this.bedroomcpic, "bedroomdpic": this.bedroomdpic });
     } else {
-      alert('Timed Out. You will have to verify your location again');
+     
+      let alert = this.alertCtrl.create({
+        title: '<div> Your time is up.</div>',
+        subTitle: '<div>Sorry, you have to complete the photo </div><div>taking and submission with 3 mins.</div><div>Please start again from Step1.</div>',
+        buttons: ['Re-enter Details'],
+        enableBackdropDismiss: false
+      });
+      alert.present();
+
       this.navCtrl.setRoot(ValidatePage, { "nric": this.nric, "fullname": this.fullname, "contactno": this.contactno, "street": this.street, "unitno": this.unitno, "postalcode": this.postalcode, "noofoccupants": this.noofoccupants, "noofrooms": this.noofrooms });
 
     }
@@ -344,7 +352,7 @@ export class UploadpicPage {
     // Pomodoro is usually for 25 minutes
     if (!this.timeInSeconds) {
       // this.timeInSeconds = 300;
-      this.timeInSeconds = 120;
+      this.timeInSeconds = 180;
     }
 
     this.time = this.timeInSeconds;

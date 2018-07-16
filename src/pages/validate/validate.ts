@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams,AlertController } from 'ionic-angular';
 import { FormBuilder, Validators } from '@angular/forms';
 import { User } from '../user';
 import { VerifyPage } from '../verify/verify';
@@ -42,7 +42,7 @@ export class ValidatePage {
    noofrooms: number=3;
 
   userRes: UserResponse;
-  constructor(public navCtrl: NavController, public navParams: NavParams, public fb: FormBuilder) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public fb: FormBuilder,private alertCtrl:AlertController) {
     // this.user=this.fb.group({username:['',Validators.required]});
     // this.userRes=this.navParams.get('data');
 
@@ -66,15 +66,56 @@ export class ValidatePage {
   }
   next() {
     if (this.isnull(this.contactno)) {
-      alert("Please Enter Your Contact No."); return;
+    
+      let alert = this.alertCtrl.create({
+        title: '<div>Invalid Input</div>',
+        subTitle: '<div>Please Enter Your  Contact No.</div>',
+        buttons: ['OK'],
+        enableBackdropDismiss: false
+      });
+      alert.present();
+      
+      return;
     } else if (this.isnull(this.street)) {
-      alert("Please Enter Street Name"); return;
+     
+      let alert = this.alertCtrl.create({
+        title: '<div>Invalid Input</div>',
+        subTitle: '<div>Please Enter Your Street Name.</div>',
+        buttons: ['OK'],
+        enableBackdropDismiss: false
+      });
+      alert.present();
+       return;
     } else if (this.isnull(this.postalcode)) {
-      alert("Please Enter Postal Code"); return;
+    
+      let alert = this.alertCtrl.create({
+        title: '<div>Invalid Input</div>',
+        subTitle: '<div>Please Enter Your Postal Code.</div>',
+        buttons: ['OK'],
+        enableBackdropDismiss: false
+      });
+      alert.present();
+      return;
     } else if (this.isnull(this.noofoccupants)) {
-      alert("Please Enter No Of Occupants"); return;
+     
+      let alert = this.alertCtrl.create({
+        title: '<div>Invalid Input</div>',
+        subTitle: '<div>Please Enter  No Of Occupants.</div>',
+        buttons: ['OK'],
+        enableBackdropDismiss: false
+      });
+      alert.present();
+      return;
     } else if (this.isnull(this.noofrooms)) {
-      alert("Please Enter No Of Rooms"); return;
+    
+      let alert = this.alertCtrl.create({
+        title: '<div>Invalid Input</div>',
+        subTitle: '<div>Please Enter  No Of Rooms</div>',
+        buttons: ['OK'],
+        enableBackdropDismiss: false
+      });
+      alert.present();
+      return;
     } else {
       this.navCtrl.push(VerifyPage, { "nric": this.nric, "fullname": this.fullname, "contactno": this.contactno, "street": this.street, "unitno": this.unitno, "postalcode": this.postalcode, "noofoccupants": this.noofoccupants, "noofrooms": this.noofrooms });
     }
