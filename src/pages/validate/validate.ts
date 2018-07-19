@@ -6,7 +6,7 @@ import { VerifyPage } from '../verify/verify';
 import { UserResponse } from '../UserResponse';
 import { ValidateInput } from '../ValidateInput';
 import { HomePage } from '../home/home';
-
+import { StatusBar } from '@ionic-native/status-bar';
 
 /**
  * Generated class for the ValidatePage page.
@@ -42,10 +42,13 @@ export class ValidatePage {
    noofrooms: number=3;
 
   userRes: UserResponse;
-  constructor(public navCtrl: NavController, public navParams: NavParams, public fb: FormBuilder,private alertCtrl:AlertController) {
+  constructor(private statusBar: StatusBar,public navCtrl: NavController, public navParams: NavParams, public fb: FormBuilder,private alertCtrl:AlertController) {
     // this.user=this.fb.group({username:['',Validators.required]});
     // this.userRes=this.navParams.get('data');
+    this.statusBar.overlaysWebView(true);
 
+    // set status bar to white
+    this.statusBar.backgroundColorByHexString('#EC8924');
     this.fullname = this.navParams.get('nric');
     this.nric = this.navParams.get('fullname');
     this.contactno = this.navParams.get('contactno');

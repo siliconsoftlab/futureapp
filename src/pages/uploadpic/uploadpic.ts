@@ -123,6 +123,17 @@ export class UploadpicPage {
 
   takePicture(pic) {
 
+    if(this.remainingTime==0){
+      let alert = this.alertCtrl.create({
+        title: '<div> Your time is up.</div>',
+        subTitle: '<div>Sorry, you have to complete the photo </div><div>taking and submission with 3 mins.</div><div>Please start again from Step1.</div>',
+        buttons: ['Re-enter Details'],
+        enableBackdropDismiss: false
+      });
+      alert.present();
+      this.navCtrl.setRoot(ValidatePage, { "nric": this.nric, "fullname": this.fullname, "contactno": this.contactno, "street": this.street, "unitno": this.unitno, "postalcode": this.postalcode, "noofoccupants": this.noofoccupants, "noofrooms": this.noofrooms });
+      return;
+    }
     switch (pic) {
       case this.maindoor:
         this.tilemsg = 'Main Door';
@@ -352,7 +363,23 @@ export class UploadpicPage {
     // Pomodoro is usually for 25 minutes
     if (!this.timeInSeconds) {
       // this.timeInSeconds = 300;
-      this.timeInSeconds = 180;
+      this.timeInSeconds = 60;
+     // this.startCount(this.timeInSeconds);
+     setTimeout(() => 
+     {
+      let alert = this.alertCtrl.create({
+        title: '<div> Your time is up.</div>',
+        subTitle: '<div>Sorry, you have to complete the photo </div><div>taking and submission with 3 mins.</div><div>Please start again from Step1.</div>',
+        buttons: ['Re-enter Details'],
+        enableBackdropDismiss: false
+      });
+      alert.present();
+
+      this.navCtrl.setRoot(ValidatePage, { "nric": this.nric, "fullname": this.fullname, "contactno": this.contactno, "street": this.street, "unitno": this.unitno, "postalcode": this.postalcode, "noofoccupants": this.noofoccupants, "noofrooms": this.noofrooms });
+      return;
+     },
+     60000);
+
     }
 
     this.time = this.timeInSeconds;
@@ -368,8 +395,12 @@ export class UploadpicPage {
     this.runTimer = true;
     this.hasStarted = true;
     this.timerTick();
+   
   }
+startCount(timeInSeconds){
 
+
+}
   pauseTimer() {
     this.runTimer = false;
   }
@@ -411,6 +442,5 @@ export class UploadpicPage {
   isnull(value) {
     return !value;
   }
-  
 
 }

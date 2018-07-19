@@ -9,14 +9,15 @@ import { Headers, RequestOptions } from '@angular/http';
 import { User } from '../user';
 import { UserResponse } from '../UserResponse';
 import { TestProvider } from '../../providers/test/test'
+import { StatusBar } from '@ionic-native/status-bar';
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
-  fin: string;
-  password: string;
+  /*fin: string;
+  password: string;*/
   timeInSeconds: any;
   time: any;
   runTimer: any;
@@ -26,8 +27,8 @@ export class HomePage {
   displayTime: any;
   loader: any;
   upp:string
- /* fin: string ='G5415489P';
-  password: string='1234';*/
+  fin: string ='G5415489P';
+  password: string='1234';
   data: any;
   url: any = "http://futureapp.pixart.com.sg/login.aspx";
   user: User = { "username": "admin", "password": "aaaa" };
@@ -35,7 +36,9 @@ export class HomePage {
 
   usrres: UserResponse;
 
-  constructor(public navCtrl: NavController, public loadingCtrl: LoadingController, private http: Http, private testService: TestProvider, private alertCtrl: AlertController, private mctrl: ModalController) {
+  constructor(public navCtrl: NavController, public loadingCtrl: LoadingController, private http: Http, private testService: TestProvider, private alertCtrl: AlertController, private mctrl: ModalController,private statusBar: StatusBar) {
+    this.statusBar.overlaysWebView(true);
+    this.statusBar.backgroundColorByHexString('#EC8924');
     var headers = new Headers();
     headers.append('Access-Control-Allow-Origin', '*');
     headers.append('Access-Control-Allow-Methods', 'POST, GET, OPTIONS, PUT');
