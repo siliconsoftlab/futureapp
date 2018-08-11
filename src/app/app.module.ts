@@ -3,8 +3,8 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
-import { HttpModule } from '@angular/http';
-import { HttpClientModule } from '@angular/common/http';
+import {Http, HttpModule } from '@angular/http';
+
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { Geolocation } from '@ionic-native/geolocation';
 import { NativeGeocoder, NativeGeocoderReverseResult, NativeGeocoderForwardResult } from '@ionic-native/native-geocoder';
@@ -26,7 +26,14 @@ import { TimerProvider} from '../providers/timer/timer';
 import { TestProvider } from '../providers/test/test';
 import {ComponentsModule} from '../components/components.module'
 
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { Base64 } from '@ionic-native/base64';
 
+export function createTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
 
 @NgModule({
   declarations: [
@@ -45,10 +52,18 @@ import {ComponentsModule} from '../components/components.module'
   imports: [
     BrowserModule,
     HttpModule,
-    HttpClientModule,
     FormsModule,
     ComponentsModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    HttpClientModule,
+    //For Translation Module
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: (createTranslateLoader),
+        deps: [HttpClient]
+      }
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -76,7 +91,9 @@ import {ComponentsModule} from '../components/components.module'
      {provide: ErrorHandler, useClass: IonicErrorHandler},
     TimerProvider,
     TimerProvider,
-    TestProvider 
+    TestProvider,
+    Base64
+     
   ]
 })
 export class AppModule {}

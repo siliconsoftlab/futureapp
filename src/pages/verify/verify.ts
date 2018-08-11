@@ -28,6 +28,8 @@ export class VerifyPage {
   postalcode: string;
   noofoccupants: number;
   noofrooms: number;
+  dob:Date;
+  rent:number;
   loader = this.loadingCtrl.create({
     content: "Please wait...",
   });
@@ -40,6 +42,9 @@ export class VerifyPage {
     this.postalcode = this.navParams.get('postalcode');
     this.noofoccupants = this.navParams.get('noofoccupants');
     this.noofrooms = this.navParams.get('noofrooms');
+    this.dob = this.navParams.get('dob');
+    this.rent = this.navParams.get('rent');
+    
     /*console.log(' this.street ' + this.street);
     console.log(' this.unitno ' + this.unitno);
     console.log(' this.postalcode ' + this.postalcode);*/
@@ -155,10 +160,11 @@ export class VerifyPage {
     if (d <= 200) {
      // this.loader.dismiss();
       //this.navCtrl.setRoot(VerifysuccessPage, { "nric": this.nric, "fullname": this.fullname, "contactno": this.contactno, "street": this.street, "unitno": this.unitno, "postalcode": this.postalcode, "noofoccupants": this.noofoccupants, "noofrooms": this.noofrooms });
-      this.navCtrl.push(VerifysuccessPage, { "nric": this.nric, "fullname": this.fullname, "contactno": this.contactno, "street": this.street, "unitno": this.unitno, "postalcode": this.postalcode, "noofoccupants": this.noofoccupants, "noofrooms": this.noofrooms });
+     
+      this.navCtrl.push(VerifysuccessPage, { "nric": this.nric, "fullname": this.fullname, "contactno": this.contactno, "street": this.street, "unitno": this.unitno, "postalcode": this.postalcode, "noofoccupants": this.noofoccupants, "noofrooms": this.noofrooms,"dob":this.dob,"rent":this.rent  });
     } else {
       //this.loader.dismiss();
-      this.navCtrl.push(VerifyerrorPage, { "nric": this.nric, "fullname": this.fullname, "contactno": this.contactno, "street": this.street, "unitno": this.unitno, "postalcode": this.postalcode, "noofoccupants": this.noofoccupants, "noofrooms": this.noofrooms });
+      this.navCtrl.push(VerifyerrorPage, { "nric": this.nric, "fullname": this.fullname, "contactno": this.contactno, "street": this.street, "unitno": this.unitno, "postalcode": this.postalcode, "noofoccupants": this.noofoccupants, "noofrooms": this.noofrooms,"dob":this.dob,"rent":this.rent });
     }
     return d; // returns the distance in meter
   };

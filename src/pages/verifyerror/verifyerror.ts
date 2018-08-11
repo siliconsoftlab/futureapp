@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ValidatePage } from '../validate/validate';
 import { SubmissionsuccessPage } from '../submissionsuccess/submissionsuccess';
-
+import { HomePage } from '../home/home';
 /**
  * Generated class for the VerifyerrorPage page.
  *
@@ -25,6 +25,8 @@ export class VerifyerrorPage {
   postalcode: string;
   noofoccupants: number;
   noofrooms: number;
+  dob:Date;
+  rent:number;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.fullname = this.navParams.get('fullname');
     this.nric = this.navParams.get('nric');
@@ -34,12 +36,17 @@ export class VerifyerrorPage {
     this.postalcode = this.navParams.get('postalcode');
     this.noofoccupants = this.navParams.get('noofoccupants');
     this.noofrooms = this.navParams.get('noofrooms');
+    this.dob = this.navParams.get('dob');
+    this.rent = this.navParams.get('rent');
   }
   
   ionViewDidLoad() {
     //console.log('ionViewDidLoad VerifyerrorPage');
   }
   gotovalidatepage() {
-    this.navCtrl.push(ValidatePage,{"nric":this.nric,"fullname":this.fullname,"contactno":this.contactno,"street":this.street,"unitno":this.unitno,"postalcode":this.postalcode,"noofoccupants":this.noofoccupants,"noofrooms":this.noofrooms});
+    this.navCtrl.push(ValidatePage,{"nric":this.nric,"fullname":this.fullname,"contactno":this.contactno,"street":this.street,"unitno":this.unitno,"postalcode":this.postalcode,"noofoccupants":this.noofoccupants,"noofrooms":this.noofrooms,"dob":this.dob,"rent":this.rent });
+  }
+  logout(){
+    this.navCtrl.setRoot(HomePage);
   }
 }

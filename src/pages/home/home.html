@@ -4,30 +4,32 @@
       <img src="assets/imgs/logo1.png">
     </div>
     <div style="font-size: 1.2em;">
-      <ion-label no-margin style=" font-family: Work Sans Medium " color="homefont"> FOREIGN WORKER</ion-label>
-      <ion-label no-margin style=" font-family: Work Sans Medium " color="homefont"> ADDRESS UPDATING SYSTEM</ion-label>
+      <ion-label no-margin style=" font-family: Work Sans Medium " color="homefont">  {{ 'FOREIGNWORKER1' | translate }}</ion-label>
+      <ion-label no-margin style=" font-family: Work Sans Medium " color="homefont"> {{ 'FOREIGNWORKER2' | translate }}</ion-label>
     </div>
     <div style="padding-top: 8%">
       <ion-buttons text-center>
-        <button ion-button small color="bluetheme" style=" font-family: Work Sans Medium " style="text-transform: none;">English</button>
-        <button ion-button small outline color="bluetheme" style=" font-family: Work Sans Medium ">中文</button>
+        <button ion-button small [outline]="isEng"  color="bluetheme" style=" font-family: Work Sans Medium " style="text-transform: none;" (click)="eng()"  [ngClass]="showheartIconRead ? 'icon_heart_red' : 'icon_heart'">English</button>
+        <button ion-button small  [outline]="isCh" color="bluetheme" style=" font-family: Work Sans Medium " (click)="chi()">中文</button>
       </ion-buttons>
     </div>
   </div>
 
   <ion-list style="padding-top: 13%;">
     <ion-item class="padding-left-right-30" style="border: none;box-shadow: none;" padding-bottom>
-      <ion-input type="text" [(ngModel)]="fin" placeholder="FIN NO." class="input-border-box" color="homefont" style=" font-family: Work Sans Regular "></ion-input>
+      <ion-input type="text" [(ngModel)]="fin"  (ngModelChange)="fin = $event.toLocaleUpperCase()"  placeholder="{{ 'FIN NO' | translate }}"  class="input-border-box" color="homefont" style=" font-family: Work Sans Regular "></ion-input>
     </ion-item>
     <ion-item class="padding-left-right-30" style="border: none;box-shadow: none;" padding-bottom>
-      <ion-input type="password" [(ngModel)]="password" placeholder="Password" class="input-border-box" color="homefont" style=" font-family: Work Sans Regular "></ion-input>
+      <ion-input type="password" [(ngModel)]="password" placeholder="{{ 'PASSWORD' | translate }}" class="input-border-box" color="homefont" style=" font-family: Work Sans Regular "></ion-input>
     </ion-item>
   </ion-list>
+
+  
   <div text-center class="padding-left-right-30" style="padding-top: 5%;">
     <button ion-button large full block color="btnorange" (click)="login()" style=" text-transform: none;font-family: Work Sans SemiBold ">
-      Login
+      {{ 'LOGIN' | translate }}
     </button>
   </div>
 
   <!-- <ion-label style="text-align: center;" padding class="padding-top30"> @ 2018 Future Employment Pte Ltd.</ion-label>-->
-</ion-content>
+</ion-content>  

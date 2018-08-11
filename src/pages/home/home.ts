@@ -11,13 +11,15 @@ import { UserResponse } from '../UserResponse';
 import { TestProvider } from '../../providers/test/test'
 import { StatusBar } from '@ionic-native/status-bar';
 
+
+import { TranslateService } from '@ngx-translate/core';
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
-  /*fin: string;
-  password: string;*/
+  fin: string;
+  password: string;
   timeInSeconds: any;
   time: any;
   runTimer: any;
@@ -27,33 +29,45 @@ export class HomePage {
   displayTime: any;
   loader: any;
   upp:string
-  fin: string ='G5415489P';
-  password: string='1234';
+ /* fin: string ='F2448994U';
+  password: string='123456';*/
   data: any;
-  url: any = "http://futureapp.pixart.com.sg/login.aspx";
+  url: any = "http://homecheck.com.sg/login.aspx";
   user: User = { "username": "admin", "password": "aaaa" };
+  isEng:boolean=false;
+  isCh:boolean=true;
   // userRes: UserResponse = { "nric": "G564638D", "fullname": "Xu Xia", "company": "", "jobtitle": "", "loginstatus": "success" };
 
   usrres: UserResponse;
-
-  constructor(public navCtrl: NavController, public loadingCtrl: LoadingController, private http: Http, private testService: TestProvider, private alertCtrl: AlertController, private mctrl: ModalController,private statusBar: StatusBar) {
+  lang:any;
+  invalidinput:any;
+  FINNO:any;
+  ENTERYOURXXXX:any;
+  PASSWORD:any;
+  OK:any;
+  INVALIDUSERNAMEPASSWORD:any;
+  constructor(public translate: TranslateService,public navCtrl: NavController, public loadingCtrl: LoadingController, private http: Http, private testService: TestProvider, private alertCtrl: AlertController, private mctrl: ModalController,private statusBar: StatusBar) {
     this.statusBar.overlaysWebView(true);
     this.statusBar.backgroundColorByHexString('#EC8924');
-    var headers = new Headers();
-    headers.append('Access-Control-Allow-Origin', '*');
-    headers.append('Access-Control-Allow-Methods', 'POST, GET, OPTIONS, PUT');
-    headers.append('Accept', 'application/json');
-    headers.append('content-type', 'application/json');
+    this.translate.use('en');
 
-    //alert("FIN "+ this.fin+" Password "+this.password);
-    // this.presentLoading();
-    // this.navCtrl.push(ValidatePage);
-    //  this.login();
+   
+
     this.testService.getData().then(result => {
       // alert(result); console.log("result: "+result);
     });
   }
-
+ 
+  /*setLanguage(){
+    let defaultLanguage = this.translate.getDefaultLang();
+    if(this.languageSelected){
+      this.translate.setDefaultLang(this.languageSelected);
+      this.translate.use(this.languageSelected);
+    }else{
+      this.languageSelected = defaultLanguage;
+      this.translate.use(defaultLanguage);
+    }
+  }*/
   login() {
 
     // alert("is null "+this.isnull(this.fin));
@@ -64,15 +78,34 @@ export class HomePage {
       content: "Please wait...",
     });
 
+    this.invalidinput = this.translate.get('INVALIDINPUT');
+    this.translate.get('INVALIDINPUT').subscribe(res => { this.invalidinput = res; });
 
+    this.FINNO = this.translate.get('FIN NO');
+    this.translate.get('FIN NO').subscribe(res => { this.FINNO = res; });
+
+    this.PASSWORD = this.translate.get('PASSWORD');
+    this.translate.get('PASSWORD').subscribe(res => { this.PASSWORD = res; });
+
+    this.ENTERYOURXXXX = this.translate.get('ENTERYOURXXXX');
+    this.translate.get('ENTERYOURXXXX').subscribe(res => { this.ENTERYOURXXXX = res; });
+
+    this.OK = this.translate.get('OK');
+    this.translate.get('OK').subscribe(res => { this.OK = res; });
+
+
+    
     if (this.isnull(this.fin)) {
       // this.presentAlert();
+      
+
+
 
 
       let alert = this.alertCtrl.create({
-        title: '<div>Invalid Credential</div>',
-        subTitle: '<div>Please Enter Your FinNo.</div>',
-        buttons: ['OK'],
+        title: `<div>${this.invalidinput}</div>`,
+        subTitle: `<div>${this.ENTERYOURXXXX}${this.FINNO}</div>`,
+        buttons: [`${this.OK}`],
         enableBackdropDismiss: false
       });
       alert.present();
@@ -82,9 +115,9 @@ export class HomePage {
 
 
       let alert = this.alertCtrl.create({
-        title: '<div>Invalid Credential</div>',
-        subTitle: '<div>Please Enter Your Password.</div>',
-        buttons: ['OK'],
+        title: `<div>${this.invalidinput}</div>`,
+        subTitle: `<div>${this.ENTERYOURXXXX}${this.PASSWORD}</div>`,
+        buttons: [`${this.OK}`],
         enableBackdropDismiss: false
       });
       alert.present();
@@ -120,24 +153,32 @@ console.log(this.fin.toUpperCase);
         });*/
 
       this.http.post(this.url, { "username": this.fin, "password": this.password }, { headers: headers }).map(res => res.text()).subscribe(data => {
-
         //alert("success "+data);
-
-
         this.usrres = JSON.parse(data);
         console.log("this.userRes " + data);
-
         //alert("loginstatus "+data);
         if (this.usrres.loginstatus == "success") {
           this.loader.dismiss();
           // this.navCtrl.push(ValidatePage, { "data": this.usrres });
           this.navCtrl.push(ValidatePage, { "nric": this.usrres.fullname, "fullname": this.usrres.nric });
-
         } else {
           this.loader.dismiss();
-          alert("Invalid Username/Password");
-        }
+          //'alert("Invalid Username/Password")
+          
 
+          
+    this.INVALIDUSERNAMEPASSWORD = this.translate.get('INVALIDUSERNAMEPASSWORD');
+    this.translate.get('INVALIDUSERNAMEPASSWORD').subscribe(res => { this.INVALIDUSERNAMEPASSWORD = res; });
+
+          let alert = this.alertCtrl.create({
+            title: `<div>${this.invalidinput}</div>`,
+            subTitle: `<div>${this.INVALIDUSERNAMEPASSWORD}</div>`,
+            buttons: [`${this.OK}`],
+            enableBackdropDismiss: false
+          });
+          alert.present();
+
+        }
       });
 
 
@@ -174,6 +215,24 @@ console.log(this.fin.toUpperCase);
       enableBackdropDismiss: false
     });
     alert.present();
+  }
+  eng(){
+   
+
+
+
+this.isEng=false;
+this.isCh=true;
+  this.translate.setDefaultLang('en');
+  this.translate.use('en');
+  }
+  chi(){
+    this.isEng=true;
+    this.isCh=false;
+    //this. translate.use('zh-cn');
+   
+    this.translate.setDefaultLang('zh-cn');
+    this.translate.use('zh-cn');
   }
 }
 interface Weather {

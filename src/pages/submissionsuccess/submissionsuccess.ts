@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams,Platform } from 'ionic-angular';
 import { HomePage } from '../home/home';
 /**
  * Generated class for the SubmissionsuccessPage page.
@@ -14,15 +14,27 @@ import { HomePage } from '../home/home';
   templateUrl: 'submissionsuccess.html',
 })
 export class SubmissionsuccessPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  rootPage:any = HomePage;
+  constructor(private platform: Platform,public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad SubmissionsuccessPage');
-  }
+  
   done(){
     this.navCtrl.push(HomePage);
   }
+  ionViewDidLoad() {
+    this.platform.ready().then(() => {
+      let backAction = this. platform.registerBackButtonAction(() => {
+        this.navCtrl.setRoot(this.rootPage);
+        backAction();
+      },2)
   
+    });
+
+
+  }
+  logout(){
+    this.navCtrl.setRoot(HomePage);
+  }
+
 }

@@ -1,0 +1,99 @@
+{	
+	"FOREIGNWORKER1":"FOREIGN WORKER",	
+	"FOREIGNWORKER2":"ADDRESS UPDATING SYSTEM",	
+	"FIN NO":"Fin No.",
+	"PASSWORD":"Password",
+	"LOGIN":"Login",
+	"FOREIGNWORKERFULL":"FOREIGN WORKER ADDRESS UPDATING SYSTEM",	
+	
+	"VALIDATE":"VALIDATE",
+	"TAKEPHOTOS":"TAKE PHOTOS",
+	"REVIEW":"REVIEW",
+	"SUBMITTITLE":"SUBMIT",
+	"ENTRECONTACTNO":"Enter Contact No.",
+	
+	"RESENDITALADDRESS":"Resdential Address",
+	"STREET":"Street",
+	"UNITNO":"Unit No.",
+	"POSTALCODE":"Postal Code",
+	"UNITDETAIL":"Unit Detail",
+	"NOOFOCCUPANTS":"No of occupants in whole unit",
+	"NOOFROOMS":"No. of Bedrooms",
+	"NEXT":"Next",
+	
+	"LOCATIONVERFIFICATIONFAILED":"Location Verification Failed !",
+	"LOCATIONVERFIFICATIONFAILEDLINE1":"It seems the address you entered is ",
+	"LOCATIONVERFIFICATIONFAILEDLINE2":"different from your current location.",
+	"LOCATIONVERFIFICATIONFAILEDLINE3":"Please make sure you are at the correct",
+	"LOCATIONVERFIFICATIONFAILEDLINE4":"location before trying the submission again.",
+	
+	"LOCATIONVERFIFICATIONSUCCEED":"Your Location has been verified.",
+	"PROCEED":"Proceed",
+	"INTSRUCTIONFORPHOTOTAKING1":"Instructions",
+	"INTSRUCTIONFORPHOTOTAKING2":"for",
+
+	"MAINDOOR":"MAIN DOOR",
+	"LIVINGROOM1":"LIVING ROOM A",
+	"LIVINGROOM2":"LIVING ROOM B",
+	"COMMONTOILET":"COMMON TOILET",
+	"KITCHEN":"KITCHEN",
+	"MYBEDROOM1":"MY BEDROOM A",
+	"MYBEDROOM2":"MY BEDROOM B",
+	"BEDROOMB":"BEDROOM 2",
+	"BEDROOMC":"BEDROOM 3",
+	"BEDROOMD":"BEDROOM 4",
+
+	"PRE":"Prev",
+	"TIMELEFT":"TIME LEFT",
+	"VIEWREPORT":"View Report",
+	"PERSONALDETAIL":"Personal Detail",
+	"EDIT":"Edit",
+	"CONTACTNO":"Contact No.",
+	"SUBMIT":"Submit",
+	"SUBMISSIONSUCCESSFULL":"Submission Successful",
+	"SUBMISSIONSUCCESSFULL1":"Thank you for your submission. Our",
+	"SUBMISSIONSUCCESSFULL2":"verification team will review the photos ",
+	"SUBMISSIONSUCCESSFULL3":"and will get back to you as soon as we ",
+	"SUBMISSIONSUCCESSFULL4":"determine the outcome.",
+
+	"DONE":"Done",
+	"YOURTIMEISUP":"Your time is up.",
+	"REDETAIL":"Start Again",
+	"ENTERDETAILS1":"You have to complete the photo ",
+	"ENTERDETAILS2":"submission within 5 minutes.",
+	"ENTERDETAILS3":"Please start again from Step1.",
+	"REENTERDETAILS":"Start Again",
+	"INSTRUCTIONPHOTOTAKING1":" Instructions",
+	"INSTRUCTIONPHOTOTAKING2":"for",
+	
+	"INVALIDUSERNAMEPASSWORD":"Invalid Username/Password",
+	"OK":"OK",
+	"INVALIDINPUT":"Invalid Input",
+	"ENTERYOURXXXX":"Please Enter Your ",
+	"PLEASETAKE":"Please take ",
+	"PIC":" pic",
+	"DOB":"Date of Birth",
+	"RENT":"Rental",
+
+	"VERIFYSUCCEES1":"You have 5 minutes to complete",
+	"VERIFYSUCCEES2":"the submission",
+
+	"MAINDOORINSTRUCTIONS":"Photo Need to show Main Door with Unit Number. Otherwise this submission will be rejected.",
+	"LIVINGROOM1INSTRUCTIONS":"Photo need to show at least 2 sides of the living room walls. You are advised to stand at the door way to take this picture. Where possible, this picture should capture the kitchen as well.",
+	"LIVINGROOM2INSTRUCTIONS":"Photo should show the other 2 sides of the living room walls, different from the previous picture taken. You are advised to stand near the kitchen when taking this photo. Where possible, this picture should capture the main door.",
+	"COMMONTOILETINSTRUCTIONS":"Photo should show a clear picture of the wash basin, shower area and toilet bowl.",
+	"KITCHENINSTRUCTIONS":"Photo should show clear picture of cooking area and wash basin, where possible.",
+	"MYBEDROOM1INSTRUCTIONS":"Photo should show at least 2 sides of the walls of your own bedroom. You are advised to take this picture from the bedroom door entrance, showing the window where possible.",
+	"MYBEDROOM2INSTRUCTIONS":"Photo should show the other 2 sides of your bedroom walls, different from the previous picture taken. You are advised to take this picture from the window, showing the bedroom door entrance where possible",
+	"BEDROOMBINSTRUCTIONS":"Photo should show a general view of the bedroom. Where photo taking is prohibited; eg. Owner occupied room, a photo showing a closed door will be sufficient.",
+	"BEDROOMCINSTRUCTIONS":"Photo should show a general view of the bedroom. Where photo taking is prohibited; eg. Owner occupied room, a photo showing a closed door will be sufficient.",
+	"BEDROOMDINSTRUCTIONS":"Photo should show a general view of the bedroom. Where photo taking is prohibited; eg. Owner occupied room, a photo showing a closed door will be sufficient.",
+
+	"INSTRUCTIONS":"Instructions"
+
+	
+
+
+	
+
+}

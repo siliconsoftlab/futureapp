@@ -8,8 +8,13 @@
 
     <div style=" display: inline-block;">
       <img src="assets/imgs/homechecklogo.png" style=" width: 40%; padding-top: 3%;">
-      <ion-label class="title" style=" margin-top: 0px; margin-bottom: 0px;" style=" font-family: Work Sans Regular;margin-top: 0px;margin-bottom: 0px; ">FOREIGN WORKER ADDRESS UPDATING SYSTEM</ion-label>
+      <ion-label class="title" style=" margin-top: 0px; margin-bottom: 0px;" style=" font-family: Work Sans Regular;margin-top: 0px;margin-bottom: 0px; ">{{ 'FOREIGNWORKERFULL' | translate }}</ion-label>
     </div>
+    <div style=" display: inline-block;position: absolute;  ">
+     
+      <img src="assets/imgs/LOGOUT.png"  (click)="logout()" style=" width: 65%; padding-top: 26%;">   
+
+  </div>
   </div>
   <div style="background-color:#dcdcdc ">
     <ion-grid text-center style="padding-top: 0px; padding-bottom: 0px; padding-left: 0px;padding-right: 0px; ">
@@ -18,28 +23,28 @@
           <div class="container">
             <img class="circle">
             <div class="centered">1</div>
-            <ion-label no-margin style="font-size: 0.6em;" color="titlefontblack" style=" font-family: Work Sans Regular;font-size: 0.75em; ">VALIDATE</ion-label>
+            <ion-label no-margin style="font-size: 0.6em;" color="titlefontblack" style=" font-family: Work Sans Regular;font-size: 0.75em; ">{{ 'VALIDATE' | translate }}</ion-label>
           </div>
         </ion-col>
         <ion-col col-3>
           <div class="container">
             <div class="centered">2</div>
             <img class="circle">
-            <ion-label no-margin style="font-size: 0.6em;" color="titlefontblack" style=" font-family: Work Sans Regular;font-size: 0.75em; ">TAKE PHOTOS</ion-label>
+            <ion-label no-margin style="font-size: 0.6em;" color="titlefontblack" style=" font-family: Work Sans Regular;font-size: 0.75em; ">{{ 'TAKEPHOTOS' | translate }}</ion-label>
           </div>
         </ion-col>
         <ion-col col-3>
           <div class="container">
             <img class="circle">
             <div class="centered">3</div>
-            <ion-label no-margin style="font-size: 0.6em; " color="titlefontorange" style=" font-family: Work Sans Regular;font-size: 0.75em; ">REVIEW</ion-label>
+            <ion-label no-margin style="font-size: 0.6em; " color="titlefontorange" style=" font-family: Work Sans Regular;font-size: 0.75em; "> {{ 'REVIEW' | translate }}</ion-label>
           </div>
         </ion-col>
         <ion-col col-3>
           <div class="container">
             <img class="circle-light">
-            <div class="centered">3</div>
-            <ion-label no-margin style="font-size: 0.6em;" color="titlefontblack" style=" font-family: Work Sans Regular;font-size: 0.75em; ">SUBMIT</ion-label>
+            <div class="centered">4</div>
+            <ion-label no-margin style="font-size: 0.6em;" color="titlefontblack" style=" font-family: Work Sans Regular;font-size: 0.75em; ">{{ 'SUBMITTITLE' | translate }}</ion-label>
           </div>
         </ion-col>
       </ion-row>
@@ -49,19 +54,19 @@
   <ion-grid text-center no-padding>
     <ion-row margin-left margin-right padding-top class="margin-left-right10">
       <ion-col col-12>
-        <ion-label no-margin color="orange" style="font-size: 1.5em; font-weight:  bold;font-family: Work Sans SemiBold">View Report</ion-label>
+        <ion-label no-margin color="orange" style="font-size: 1.5em; font-weight:  bold;font-family: Work Sans SemiBold">{{ 'VIEWREPORT' | translate }}</ion-label>
       </ion-col>
     </ion-row>
 
     <ion-row padding-top margin-left margin-right class="margin-left-right10">
       <ion-col col-12>
-        <ion-label no-margin text-left style="font-size: 1.5em; font-weight:  bold; font-family: Work Sans Medium">Personal Detail</ion-label>
+        <ion-label no-margin text-left style="font-size: 1.5em; font-weight:  bold; font-family: Work Sans Medium"> {{ 'PERSONALDETAIL' | translate }}</ion-label>
       </ion-col>
     </ion-row>
 
     <ion-row padding-top margin-left margin-right class="margin-left-right10">
       <ion-col col-6>
-        <ion-label no-margin text-left style="font-family: Work Sans Regular">Name</ion-label>
+        <ion-label no-margin text-left style="font-family: Work Sans Regular">{{ 'NAME' | translate }}</ion-label>
       </ion-col>
       <ion-col col-6 text-center>
         <ion-label no-margin text-left style="font-family: Work Sans Regular">{{fullname}}</ion-label>
@@ -70,7 +75,7 @@
 
     <ion-row padding-top margin-left margin-right class="margin-left-right10">
       <ion-col col-6>
-        <ion-label no-margin text-left style="font-family: Work Sans Regular">FIN No.</ion-label>
+        <ion-label no-margin text-left style="font-family: Work Sans Regular">{{ 'FIN NO' | translate }}</ion-label>
       </ion-col>
       <ion-col col-6 text-center>
         <ion-label no-margin text-left style="font-family: Work Sans Regular">{{nric}}</ion-label>
@@ -79,22 +84,33 @@
 
     <ion-row padding-top margin-left margin-right class="margin-left-right10">
       <ion-col col-6>
-        <ion-label no-margin text-left style="font-family: Work Sans Regular">Contact No.</ion-label>
+        <ion-label no-margin text-left style="font-family: Work Sans Regular">{{ 'CONTACTNO' | translate }}</ion-label>
       </ion-col>
       <ion-col col-6 text-center>
         <ion-label no-margin text-left style="font-family: Work Sans Regular">{{contactno}}</ion-label>
       </ion-col>
     </ion-row>
 
+
+    <ion-row padding-top margin-left margin-right class="margin-left-right10">
+      <ion-col col-6>
+        <ion-label no-margin text-left style="font-family: Work Sans Regular">{{ 'DOB' | translate }}</ion-label>
+      </ion-col>
+      <ion-col col-6 text-center>
+        <ion-label no-margin text-left style="font-family: Work Sans Regular">{{dob}}</ion-label>
+      </ion-col>
+    </ion-row>
+
+
     <ion-row padding-top margin-left margin-right class="margin-left-right10">
       <ion-col col-12>
-        <ion-label no-margin text-left style="font-size: 1.5em; font-weight:  bold; font-family: Work Sans Medium ">Residential Address</ion-label>
+        <ion-label no-margin text-left style="font-size: 1.5em; font-weight:  bold; font-family: Work Sans Medium "> {{ 'RESENDITALADDRESS' | translate }} </ion-label>
       </ion-col>
     </ion-row>
 
     <ion-row padding-top margin-left margin-right class="margin-left-right10">
       <ion-col col-6>
-        <ion-label no-margin text-left style="font-family: Work Sans Regular">Street</ion-label>
+        <ion-label no-margin text-left style="font-family: Work Sans Regular"> {{ 'STREET' | translate }} </ion-label>
       </ion-col>
       <ion-col col-6 text-center>
         <ion-label no-margin text-left style="font-family: Work Sans Regular">{{street}}</ion-label>
@@ -103,7 +119,7 @@
 
     <ion-row padding-top margin-left margin-right class="margin-left-right10">
       <ion-col col-6>
-        <ion-label no-margin text-left style="font-family: Work Sans Regular">Unit No.</ion-label>
+        <ion-label no-margin text-left style="font-family: Work Sans Regular"> {{ 'UNITNO' | translate }}</ion-label>
       </ion-col>
       <ion-col col-6 text-center>
         <ion-label no-margin text-left style="font-family: Work Sans Regular">{{unitno}}</ion-label>
@@ -112,31 +128,41 @@
 
     <ion-row padding-top margin-left margin-right class="margin-left-right10">
       <ion-col col-6>
-        <ion-label no-margin text-left style="font-family: Work Sans Regular">Postal Code</ion-label>
+        <ion-label no-margin text-left style="font-family: Work Sans Regular">{{ 'POSTALCODE' | translate }}</ion-label>
       </ion-col>
       <ion-col col-6 text-center>
         <ion-label no-margin text-left style="font-family: Work Sans Regular">{{postalcode}}</ion-label>
       </ion-col>
     </ion-row>
 
+
+    <ion-row padding-top margin-left margin-right class="margin-left-right10">
+      <ion-col col-6>
+        <ion-label no-margin text-left style="font-family: Work Sans Regular">{{ 'RENT' | translate }}</ion-label>
+      </ion-col>
+      <ion-col col-6 text-center>
+        <ion-label no-margin text-left style="font-family: Work Sans Regular">{{rent}}</ion-label>
+      </ion-col>
+    </ion-row>
+
     <ion-row padding-top margin-left margin-right class="margin-left-right10">
       <ion-col col-12>
-        <ion-label no-margin text-left style="font-size: 1.5em; font-weight:  bold; font-family: Work Sans Medium ">Unit Detail</ion-label>
+        <ion-label no-margin text-left style="font-size: 1.5em; font-weight:  bold; font-family: Work Sans Medium ">{{ 'UNITDETAIL' | translate }}</ion-label>
       </ion-col>
     </ion-row>
 
     <ion-row padding-top margin-left margin-right class="margin-left-right10">
       <ion-col col-10>
-        <ion-label no-margin text-left style="font-family: Work Sans Regular">No of occupants in whole unit</ion-label>
+        <ion-label no-margin text-left style="font-family: Work Sans Regular"> {{ 'NOOFOCCUPANTS' | translate }}</ion-label>
       </ion-col>
       <ion-col col-2 text-center>
-        <ion-label no-margin text-left style="font-family: Work Sans Regular">{{noofoccupants}}</ion-label>
+        <ion-label no-margin text-left style="font-family: Work Sans Regular">{{noofoccupants}} </ion-label>
       </ion-col>
     </ion-row>
 
     <ion-row padding-top margin-left margin-right class="margin-left-right10">
       <ion-col col-10>
-        <ion-label no-margin text-left style="font-family: Work Sans Regular">No. of Bedrooms</ion-label>
+        <ion-label no-margin text-left style="font-family: Work Sans Regular"> {{ 'NOOFROOMS' | translate }} </ion-label>
       </ion-col>
       <ion-col col-2 text-center>
         <ion-label no-margin text-left style="font-family: Work Sans Regular">{{noofrooms}}</ion-label>
@@ -147,54 +173,54 @@
       <ion-col col-12>
         <!--   <img src="assets/imgs/room1.png" width="100%" >-->
         <img [src]="maindoorpic" width="100%">
-        <ion-label no-margin style="font-weight:  bold;     padding-top: 2%;" style="font-family: Work Sans SemiBold">MAIN DOOR</ion-label>
+        <ion-label no-margin style="font-weight:  bold;     padding-top: 2%;" style="font-family: Work Sans SemiBold">{{ 'MAINDOOR' | translate }}</ion-label>
       </ion-col>
     </ion-row>
 
     <ion-row padding-top margin-left margin-right class="margin-left-right10">
       <ion-col col-12>
         <img [src]="livingroompic" width="100%">
-        <ion-label no-margin style="font-weight:  bold;     padding-top: 2%;" style="font-family: Work Sans SemiBold">LIVING ROOM 1</ion-label>
+        <ion-label no-margin style="font-weight:  bold;     padding-top: 2%;" style="font-family: Work Sans SemiBold"> {{ 'LIVINGROOM1' | translate }}</ion-label>
       </ion-col>
     </ion-row>
 
     <ion-row padding-top margin-left margin-right class="margin-left-right10">
       <ion-col col-12>
         <img [src]="livingroom1pic" width="100%">
-        <ion-label no-margin style="font-weight:  bold;     padding-top: 2%;" style="font-family: Work Sans SemiBold">LIVING ROOM 2</ion-label>
+        <ion-label no-margin style="font-weight:  bold;     padding-top: 2%;" style="font-family: Work Sans SemiBold"> {{ 'LIVINGROOM2' | translate }}</ion-label>
       </ion-col>
     </ion-row>
     <ion-row padding-top margin-left margin-right class="margin-left-right10">
       <ion-col col-12>
         <img [src]="kitchenpic" width="100%">
-        <ion-label no-margin style="font-weight:  bold;    padding-top: 2%;" style="font-family: Work Sans SemiBold">KITCHEN</ion-label>
+        <ion-label no-margin style="font-weight:  bold;    padding-top: 2%;" style="font-family: Work Sans SemiBold"> {{ 'KITCHEN' | translate }}</ion-label>
       </ion-col>
     </ion-row>
     <ion-row padding-top margin-left margin-right class="margin-left-right10">
       <ion-col col-12>
         <img [src]="cmntoiletpic" width="100%">
-        <ion-label no-margin style="font-weight:  bold;    padding-top: 2%;" style="font-family: Work Sans SemiBold">COMMON TOILET</ion-label>
+        <ion-label no-margin style="font-weight:  bold;    padding-top: 2%;" style="font-family: Work Sans SemiBold"> {{ 'COMMONTOILET' | translate }}</ion-label>
       </ion-col>
     </ion-row>
 
     <ion-row padding-top margin-left margin-right class="margin-left-right10">
       <ion-col col-12>
         <img [src]="bedroom1pic" width="100%">
-        <ion-label no-margin style="font-weight:  bold;     padding-top: 2%;" style="font-family: Work Sans SemiBold">MY BED ROOM 1</ion-label>
+        <ion-label no-margin style="font-weight:  bold;     padding-top: 2%;" style="font-family: Work Sans SemiBold"> {{ 'MYBEDROOM1' | translate }}</ion-label>
       </ion-col>
     </ion-row>
 
     <ion-row padding-top margin-left margin-right class="margin-left-right10">
       <ion-col col-12>
         <img [src]="bedroom2pic" width="100%">
-        <ion-label no-margin style="font-weight:  bold;     padding-top: 2%;" style="font-family: Work Sans SemiBold">MY BED ROOM 2</ion-label>
+        <ion-label no-margin style="font-weight:  bold;     padding-top: 2%;" style="font-family: Work Sans SemiBold"> {{ 'MYBEDROOM2' | translate }}</ion-label>
       </ion-col>
     </ion-row>
 
     <ion-row padding-top margin-left margin-right class="margin-left-right10">
       <ion-col col-12>
-        <img [src]="bedroom1pic" width="100%">
-        <ion-label no-margin style="font-weight:  bold;     padding-top: 2%;" style="font-family: Work Sans SemiBold">BED ROOM B</ion-label>
+        <img [src]="bedroombpic" width="100%">
+        <ion-label no-margin style="font-weight:  bold;     padding-top: 2%;" style="font-family: Work Sans SemiBold"> {{ 'BEDROOMB' | translate }}</ion-label>
       </ion-col>
     </ion-row>
 
@@ -202,8 +228,8 @@
     <ng-template #thenBlock8>
       <ion-row padding-top margin-left margin-right class="margin-left-right10">
         <ion-col col-12>
-          <img [src]="bedroom2pic" width="100%">
-          <ion-label no-margin style="font-weight:  bold;     padding-top: 2%;" style="font-family: Work Sans SemiBold">BED ROOM C</ion-label>
+          <img [src]="bedroomcpic" width="100%">
+          <ion-label no-margin style="font-weight:  bold;     padding-top: 2%;" style="font-family: Work Sans SemiBold">{{ 'BEDROOMC' | translate }} </ion-label>
         </ion-col>
       </ion-row>
     </ng-template>
@@ -212,8 +238,8 @@
     <ng-template #thenBlock9>
       <ion-row padding-top margin-left margin-right class="margin-left-right10">
         <ion-col col-12>
-          <img [src]="bedroombpic" width="100%">
-          <ion-label no-margin style="font-weight:  bold;    padding-top: 2%;" style="font-family: Work Sans SemiBold">BED ROOM D</ion-label>
+          <img [src]="bedroomdpic" width="100%">
+          <ion-label no-margin style="font-weight:  bold;    padding-top: 2%;" style="font-family: Work Sans SemiBold"> {{ 'BEDROOMD' | translate }}</ion-label>
         </ion-col>
       </ion-row>
     </ng-template>
@@ -223,7 +249,7 @@
 
     <ion-row no-margin no-padding padding-top>
       <ion-col col-12 style="background-color: #f0f0f0">
-        <ion-label no-margin style=" display: inline-block;font-weight: bold; padding-top: 8px; color: #e3493b !important;font-family: Work Sans Bold">TIME LEFT: </ion-label>
+        <ion-label no-margin style=" display: inline-block;font-weight: bold; padding-top: 8px; color: #e3493b !important;font-family: Work Sans Bold">{{ 'TIMELEFT' | translate }}: </ion-label>
         <ion-label no-margin style=" display: inline-block; padding-top: 8px;font-family: Work Sans Bold" color="timertext">{{displayTime}}</ion-label>
       </ion-col>
     </ion-row>
@@ -231,12 +257,12 @@
     <ion-row padding-top padding-bottom>
       <ion-col col-6 text-right padding>
         <button ion-button medium color="buttoncement" (click)="prev()" style="font-family: Work Sans SemiBold">
-          Edit
+         {{ 'EDIT' | translate }}
         </button>
       </ion-col>
       <ion-col col-6 text-left padding>
         <button ion-button medium color="buttongreen" (click)="next()" style="font-family: Work Sans SemiBold">
-          Submit
+           {{ 'SUBMIT' | translate }}
         </button>
       </ion-col>
     </ion-row>

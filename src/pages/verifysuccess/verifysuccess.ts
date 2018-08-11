@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 import { UploadPage } from '../upload/upload';
-
+import { HomePage } from '../home/home';
 
 import { UploadpicPage } from '../uploadpic/uploadpic';
 /**
@@ -27,7 +27,10 @@ export class VerifysuccessPage {
   postalcode: string;
   noofoccupants: number;
   noofrooms: number;
+  dob:Date;
+  rent:number;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    
     this.fullname = this.navParams.get('fullname');
     this.nric = this.navParams.get('nric');
     this.contactno = this.navParams.get('contactno');
@@ -36,6 +39,9 @@ export class VerifysuccessPage {
     this.postalcode = this.navParams.get('postalcode');
     this.noofoccupants = this.navParams.get('noofoccupants');
     this.noofrooms = this.navParams.get('noofrooms');
+    this.dob = this.navParams.get('dob');
+    this.rent = this.navParams.get('rent');
+    
    // alert("this.noofrooms FROM SS "+this.noofrooms );
   }
 
@@ -43,8 +49,11 @@ export class VerifysuccessPage {
     //console.log('ionViewDidLoad VerifysuccessPage');
   }
   uploadphotos() {
+   
+    this.navCtrl.push(UploadpicPage,{"nric":this.nric,"fullname":this.fullname,"contactno":this.contactno,"street":this.street,"unitno":this.unitno,"postalcode":this.postalcode,"noofoccupants":this.noofoccupants,"noofrooms":this.noofrooms,"dob":this.dob,"rent":this.rent });
 
-    this.navCtrl.push(UploadpicPage,{"nric":this.nric,"fullname":this.fullname,"contactno":this.contactno,"street":this.street,"unitno":this.unitno,"postalcode":this.postalcode,"noofoccupants":this.noofoccupants,"noofrooms":this.noofrooms});
-
+  }
+  logout(){
+    this.navCtrl.setRoot(HomePage);
   }
 }

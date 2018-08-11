@@ -61,7 +61,7 @@
     font-size: .5em;
     margin-top: 1em;
     padding-right: 1em;
-    margin-left: 3.4em;
+    margin-left: 1.4em;
   }
   .fnt075 {
     font-size: 0.75em !important;
@@ -248,13 +248,15 @@
     color: black;
     text-align: center
   }
-  .alert-title div:nth-child(3) {
+  .alert-title div:nth-child(1) {
     font-size: 1.5em;
     color: #f5821f;
     text-align: center
   }
-  .alert-sub-title{
-    text-align: center
+  .alert-sub-title div:nth-child(1) {
+    text-align: center;
+    font-weight: normal;
+    font-style: normal;
   }
   .alert-md .alert-button{
   color: black;
