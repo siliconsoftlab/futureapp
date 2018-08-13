@@ -155,7 +155,7 @@ console.log(this.fin.toUpperCase);
         });*/
       this.http.setDataSerializer('json');
       this.http.post(this.url, { "username": this.fin, "password": this.password }, { }).then(data => {
-        alert("success "+data);
+       // alert("success "+data);
         this.usrres = JSON.parse(data.data);
         console.log("this.userRes " + data);
         //alert("loginstatus "+data);
