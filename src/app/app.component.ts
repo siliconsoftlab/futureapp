@@ -19,10 +19,11 @@ import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 //import { ValidatePage } from '../pages/validate/validate';
 @Component({
   templateUrl: 'app.html'
+  
 })
 
 export class MyApp {
-  rootPage:any = ValidatePage; 
+  rootPage:any = HomePage; 
     constructor(private translate: TranslateService,platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.

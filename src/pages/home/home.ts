@@ -5,6 +5,8 @@ import { ValidatePage } from '../validate/validate';
 import { InstructionsPage } from '../instructions/instructions';
 import 'rxjs/add/operator/map'
 import { Http, Response } from '@angular/http';
+import { HTTP } from '@ionic-native/http';
+
 import { Headers, RequestOptions } from '@angular/http';
 import { User } from '../user';
 import { UserResponse } from '../UserResponse';
@@ -46,7 +48,7 @@ export class HomePage {
   PASSWORD:any;
   OK:any;
   INVALIDUSERNAMEPASSWORD:any;
-  constructor(public translate: TranslateService,public navCtrl: NavController, public loadingCtrl: LoadingController, private http: Http, private testService: TestProvider, private alertCtrl: AlertController, private mctrl: ModalController,private statusBar: StatusBar) {
+  constructor(public translate: TranslateService,private http: HTTP,public navCtrl: NavController, public loadingCtrl: LoadingController, private httpan: Http, private testService: TestProvider, private alertCtrl: AlertController, private mctrl: ModalController,private statusBar: StatusBar) {
     this.statusBar.overlaysWebView(true);
     this.statusBar.backgroundColorByHexString('#EC8924');
     this.translate.use('en');
@@ -151,10 +153,10 @@ console.log(this.fin.toUpperCase);
           // alert("loginstatus "+this.userRes.loginstatus);
     
         });*/
-
-      this.http.post(this.url, { "username": this.fin, "password": this.password }, { headers: headers }).map(res => res.text()).subscribe(data => {
-        //alert("success "+data);
-        this.usrres = JSON.parse(data);
+      this.http.setDataSerializer('json');
+      this.http.post(this.url, { "username": this.fin, "password": this.password }, { }).then(data => {
+        alert("success "+data);
+        this.usrres = JSON.parse(data.data);
         console.log("this.userRes " + data);
         //alert("loginstatus "+data);
         if (this.usrres.loginstatus == "success") {
@@ -179,6 +181,8 @@ console.log(this.fin.toUpperCase);
           alert.present();
 
         }
+      }).catch(err=>{
+        alert('err');
       });
 
 

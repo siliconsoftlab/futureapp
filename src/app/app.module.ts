@@ -30,7 +30,7 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { Base64 } from '@ionic-native/base64';
-
+import { HTTP } from '@ionic-native/http';
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
@@ -86,6 +86,7 @@ export function createTranslateLoader(http: HttpClient) {
     GeoServiceProvider,
     NativeGeocoder,
     TimerProvider,
+    HTTP,
     LocationAccuracy,
   
      {provide: ErrorHandler, useClass: IonicErrorHandler},
