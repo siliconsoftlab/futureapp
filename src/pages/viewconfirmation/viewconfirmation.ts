@@ -4,6 +4,7 @@ import { SubmissionsuccessPage } from '../submissionsuccess/submissionsuccess';
 import { ValidatePage } from '../validate/validate';
 import { Base64 } from '@ionic-native/base64';
 import { Http, Response } from '@angular/http';
+import { HTTP } from '@ionic-native/http';
 import { Headers, RequestOptions } from '@angular/http';
 import { SubmisssionRespose } from '../SumissionResponse';
 import { LoadingController } from 'ionic-angular';
@@ -64,7 +65,7 @@ export class ViewconfirmationPage {
   public id:any;
   rootPage:any = HomePage;
   isprev:boolean=false;
-  constructor(public loadingCtrl: LoadingController, private http: Http, private base64: Base64, private platform: Platform, public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public loadingCtrl: LoadingController, private http: HTTP,private httpangular: Http, private base64: Base64, private platform: Platform, public navCtrl: NavController, public navParams: NavParams) {
    
     this.fullname = this.navParams.get('fullname');
     this.nric = this.navParams.get('nric');
@@ -165,12 +166,12 @@ export class ViewconfirmationPage {
         headers.append('content-type', 'application/json');
         headers.append('dataType', 'json')
 
-        this.http.post(this.url, { "FinNo": this.nric, "FullName": this.fullname, "ContactNo": this.contactno, "StreetAdress": this.street, "UnitNo": this.unitno, "PostalCode": this.postalcode, "NoOfOccupants": this.noofoccupants, "NoOfBedrooms": this.noofrooms, "ImageList": successData ,"Dob":this.dob,"Rent":this.rent}, { headers: headers }).map(res => res.text()).subscribe(data => {
+        this.http.post(this.url, { "FinNo": this.nric, "FullName": this.fullname, "ContactNo": this.contactno, "StreetAdress": this.street, "UnitNo": this.unitno, "PostalCode": this.postalcode, "NoOfOccupants": this.noofoccupants, "NoOfBedrooms": this.noofrooms, "ImageList": successData ,"Dob":this.dob,"Rent":this.rent}, { }).then(data => {
           // alert("success "+data);
           // alert(JSON.parse(data));
-          console.log("JSON.parse(data) " + JSON.parse(data));
+          console.log("JSON.parse(data) " + data.data);
           console.log("data " + data);
-          this.subRes = JSON.parse(data);
+          this.subRes = JSON.parse(data.data);
 
           if (this.subRes.status == "success") {
             this.loader.dismiss();
@@ -190,7 +191,11 @@ export class ViewconfirmationPage {
 
         }
 
-        );
+        ).catch(err=>{
+
+          alert(err);
+          this.loader.dismiss();
+        });
 
 
         

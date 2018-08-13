@@ -48,7 +48,7 @@ export class HomePage {
   PASSWORD:any;
   OK:any;
   INVALIDUSERNAMEPASSWORD:any;
-  constructor(public translate: TranslateService,private http: HTTP,public navCtrl: NavController, public loadingCtrl: LoadingController, private httpan: Http, private testService: TestProvider, private alertCtrl: AlertController, private mctrl: ModalController,private statusBar: StatusBar) {
+  constructor(public translate: TranslateService,private http: HTTP,public navCtrl: NavController, public loadingCtrl: LoadingController, private httpangular: Http, private testService: TestProvider, private alertCtrl: AlertController, private mctrl: ModalController,private statusBar: StatusBar) {
     this.statusBar.overlaysWebView(true);
     this.statusBar.backgroundColorByHexString('#EC8924');
     this.translate.use('en');
