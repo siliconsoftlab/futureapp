@@ -169,8 +169,8 @@ export class ViewconfirmationPage {
         this.http.post(this.url, { "FinNo": this.nric, "FullName": this.fullname, "ContactNo": this.contactno, "StreetAdress": this.street, "UnitNo": this.unitno, "PostalCode": this.postalcode, "NoOfOccupants": this.noofoccupants, "NoOfBedrooms": this.noofrooms, "ImageList": successData ,"Dob":this.dob,"Rent":this.rent}, { }).then(data => {
           // alert("success "+data);
           // alert(JSON.parse(data));
-          console.log("JSON.parse(data) " + data.data);
-          console.log("data " + data);
+          console.log("Response" + data.data);
+         
           this.subRes = JSON.parse(data.data);
 
           if (this.subRes.status == "success") {

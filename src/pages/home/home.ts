@@ -48,6 +48,7 @@ export class HomePage {
   PASSWORD:any;
   OK:any;
   INVALIDUSERNAMEPASSWORD:any;
+  INVALIDREQUEST:any;
   constructor(public translate: TranslateService,private http: HTTP,public navCtrl: NavController, public loadingCtrl: LoadingController, private httpangular: Http, private testService: TestProvider, private alertCtrl: AlertController, private mctrl: ModalController,private statusBar: StatusBar) {
     this.statusBar.overlaysWebView(true);
     this.statusBar.backgroundColorByHexString('#EC8924');
@@ -133,44 +134,41 @@ export class HomePage {
       headers.append('content-type', 'application/json');
       headers.append('dataType', 'json')
 
-console.log(this.fin.toUpperCase);
-//alert(this.fin.toUpperCase);
-
-      /*   this.http.post(this.url, this.user).subscribe(result => {
-          alert("last");
-          console.log("result " + result);
-          console.log("result " + result.json());
-          this.weather = result.json();
-          alert("last");
-      });*/
-
-
-      /*  this.http.get('http://192.168.1.34:8080/suyamvaram/v1/test').map(res => res.json()).subscribe(data => {
-          alert("suyamvaram");
-          alert("username " + data);
-          this.userRes = data;
-          console.log("this.userRes " + data);
-          // alert("loginstatus "+this.userRes.loginstatus);
-    
-        });*/
+   
       this.http.setDataSerializer('json');
       this.http.post(this.url, { "username": this.fin, "password": this.password }, { }).then(data => {
        // alert("success "+data);
+      /* console.log("data  " +data);
+       console.log("data.data  " +data.data);
+       console.log("JSON.parse(data.data)" +JSON.parse(data.data));
+       console.log("JSON.stringify( data.data)" +JSON.stringify( data.data));
+      
+      
+      alert("data  " +data);
+      alert("data.data  " +data.data);
+      alert("JSON.parse(data.data)" +JSON.parse(data.data));
+      alert("JSON.stringify( data.data)" +JSON.stringify( data.data));*/
+
+
         this.usrres = JSON.parse(data.data);
-        console.log("this.userRes " + data);
+        console.log("this.userRes " +data.data);
+       // alert("this.userRes " +this.usrres);
+        //alert("this.userRes.loginstatus " +this.usrres.loginstatus);
+        //alert("this.userRes.company " +this.usrres.company);
+
+        //alert("this.userRes.fullname " +this.usrres.fullname);
+        //alert("this.userRes.jobtitle " +this.usrres.jobtitle);
+        //alert("this.userRes.nric " +this.usrres.nric);
         //alert("loginstatus "+data);
         if (this.usrres.loginstatus == "success") {
           this.loader.dismiss();
           // this.navCtrl.push(ValidatePage, { "data": this.usrres });
           this.navCtrl.push(ValidatePage, { "nric": this.usrres.fullname, "fullname": this.usrres.nric });
-        } else {
+        } else if(this.usrres.loginstatus == "fail"){
           this.loader.dismiss();
-          //'alert("Invalid Username/Password")
-          
-
-          
-    this.INVALIDUSERNAMEPASSWORD = this.translate.get('INVALIDUSERNAMEPASSWORD');
-    this.translate.get('INVALIDUSERNAMEPASSWORD').subscribe(res => { this.INVALIDUSERNAMEPASSWORD = res; });
+   
+        this.INVALIDUSERNAMEPASSWORD = this.translate.get('INVALIDUSERNAMEPASSWORD');
+        this.translate.get('INVALIDUSERNAMEPASSWORD').subscribe(res => { this.INVALIDUSERNAMEPASSWORD = res; });
 
           let alert = this.alertCtrl.create({
             title: `<div>${this.invalidinput}</div>`,
@@ -180,20 +178,24 @@ console.log(this.fin.toUpperCase);
           });
           alert.present();
 
+        }else if(this.usrres.loginstatus == "fail2"){
+          this.loader.dismiss();
+   
+          this.INVALIDREQUEST = this.translate.get('INVALIDREQUEST');
+          this.translate.get('INVALIDREQUEST').subscribe(res => { this.INVALIDREQUEST = res; });
+                      let alert = this.alertCtrl.create({
+                  title: `<div>${this.invalidinput}</div>`,
+                  subTitle: `<div>${this.INVALIDREQUEST}</div>`,
+                  buttons: [`${this.OK}`],
+                  enableBackdropDismiss: false
+                });
+                alert.present();
+
         }
       }).catch(err=>{
         alert('err');
       });
-
-
-      /*  this.http.post(this.url, this.user, { headers: headers}).map(res=> JSON.stringify(res)).subscribe(data=>{
-          // alert("text");
-           //alert("success "+data);
-         
-           console.log("this.userRes "+data);
-          // alert("loginstatus "+data);
-         
-          });*/
+    
     }
   }
 

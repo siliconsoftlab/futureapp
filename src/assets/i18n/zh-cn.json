@@ -65,6 +65,7 @@
 
 
 	"INVALIDUSERNAMEPASSWORD":"用户名或密码无效，请重试！",
+	"INVALIDREQUEST":"您的报告已经提交。",
 	"OK":"确认",
 	"INVALIDINPUT":"无效操作",
 	"ENTERYOURXXXX":"请输入您的",
