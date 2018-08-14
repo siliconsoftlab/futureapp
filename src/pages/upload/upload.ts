@@ -13,7 +13,7 @@ import { Item } from '../Item';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
+
 @Component({
   selector: 'page-upload',
   templateUrl: 'upload.html',

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, Alert, AlertController, ModalController } from 'ionic-angular';
 import { LoadingController } from 'ionic-angular';
 import { ValidatePage } from '../validate/validate';
-import { InstructionsPage } from '../instructions/instructions';
+
 import 'rxjs/add/operator/map'
 import { Http, Response } from '@angular/http';
 import { HTTP } from '@ionic-native/http';

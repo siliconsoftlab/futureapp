@@ -12,7 +12,7 @@ import { UploadpicPage } from '../uploadpic/uploadpic';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
+
 @Component({
   selector: 'page-verifysuccess',
   templateUrl: 'verifysuccess.html',

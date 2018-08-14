@@ -8,7 +8,7 @@ import { NativeGeocoder, NativeGeocoderReverseResult, NativeGeocoderForwardResul
 import { LocationAccuracy } from '@ionic-native/location-accuracy';
 import { ValidatePage } from '../validate/validate';
 
-@IonicPage()
+
 @Component({
   selector: 'page-verify',
   templateUrl: 'verify.html',

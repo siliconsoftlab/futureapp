@@ -11,7 +11,7 @@ import { LoadingController } from 'ionic-angular';
 import { FinalInput } from '../FinalInput';
 import { HomePage } from '../home/home';
 
-@IonicPage()
+
 @Component({
   selector: 'page-viewconfirmation',
   templateUrl: 'viewconfirmation.html',
